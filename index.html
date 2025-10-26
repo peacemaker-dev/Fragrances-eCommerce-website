@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragrances - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <img src="images/icons/option.png" alt="Menu Icon" width="28">
+                </button>
+                <a href="#home">
+                    <h1>PM <span>Fragrances</span></h1>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <!-- Mobile Dropdown Menu -->
+                <div class="mobile-menu">
+                    <ul class="mobile-nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Icons -->
+            <div class="header-icons">
+                <button class="icon-btn" aria-label="Search">
+                    <img src="images/icons/search.png" alt="Search" width="26">
+                </button>
+                <button class="icon-btn" aria-label="Shopping Cart">
+                    <img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="26">
+                </button>
+                <button class="icon-btn" aria-label="User Account">
+                    <img src="images/icons/user.png" alt="User Account" width="26">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home" role="region" aria-label="Hero Section">
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-carousel" aria-live="polite">
+                <!-- Slide 1: For Him -->
+                <article class="hero-slide" data-slide="for-him" aria-roledescription="slide" aria-label="For Him">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Bold Scents for Modern Men</h2>
+                        <p class="hero-subtitle">
+                            Explore Dubai-inspired and designer colognes that define confidence and class.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#shop?category=for-him" class="btn btn-primary">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="hero-media" aria-hidden="true">
+                        <img src="images/hero/for-him.jpg" alt="" role="presentation">
+                    </div>
+                </article>
+
+                <!-- Slide 2: For Her -->
+                <article class="hero-slide" data-slide="for-her" aria-roledescription="slide" aria-label="For Her">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Elegant. Feminine. Unforgettable.</h2>
+                        <p class="hero-subtitle">
+                            Indulge in luxury perfumes that turn every moment into a statement.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#shop?category=for-her" class="btn btn-primary">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="hero-media" aria-hidden="true">
+                        <img src="images/hero/for-her.jpg" alt="" role="presentation">
+                    </div>
+                </article>
+
+                <!-- Slide 3: Unisex -->
+                <article class="hero-slide" data-slide="unisex" aria-roledescription="slide" aria-label="Unisex">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Confidence Has No Gender</h2>
+                        <p class="hero-subtitle">
+                            Discover balanced fragrances loved by both men and women — built to suit every style.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#shop?category=unisex" class="btn btn-primary">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="hero-media" aria-hidden="true">
+                        <img src="images/hero/unisex.jpg" alt="" role="presentation">
+                    </div>
+                </article>
+
+                <!-- Slide 4: Best Sellers -->
+                <article class="hero-slide" data-slide="best-sellers" aria-roledescription="slide"
+                    aria-label="Best Sellers">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Top Picks Our Customers Swear By</h2>
+                        <p class="hero-subtitle">
+                            Shop our best-selling fragrances trusted, original, and loved by thousands.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#shop?category=best-sellers" class="btn btn-primary">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="hero-media" aria-hidden="true">
+                        <img src="images/hero/best-sellers.jpg" alt="" role="presentation">
+                    </div>
+                </article>
+            </div>
+
+            <div class="scroll-down" aria-hidden="true">
+                <img src="images/icons/arrow-down.png" alt="Scroll down" width="24">
+                <span>Scroll Down</span>
+            </div>
+        </section>
+
+        <!-- Featured Collections -->
+        <section class="featured-collections" id="shop">
+            <div class="container collections-container">
+                <h2>Featured Collections</h2>
+                <p>Explore our handpicked fragrances — carefully curated to match your style and personality.</p>
+
+                <div class="collections-grid">
+                    <!-- Collection 1: For Him -->
+                    <div class="collection-item">
+                        <a href="#shop?category=for-him">
+                            <div class="collection-image">
+                                <img src="images/hero/vv.jpg" alt="For Him Perfumes">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <h3>For Him</h3>
+                            <span class="shop-now-btn">Shop Now</span>
+                        </a>
+                    </div>
+
+                    <!-- Collection 2: For Her -->
+                    <div class="collection-item">
+                        <a href="#shop?category=for-her">
+                            <div class="collection-image">
+                                <img src="images/hero/for-her.jpg" alt="For Her Perfumes">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <h3>For Her</h3>
+                            <span class="shop-now-btn">Shop Now</span>
+                        </a>
+                    </div>
+
+                    <!-- Collection 3: Unisex -->
+                    <div class="collection-item">
+                        <a href="#shop?category=unisex">
+                            <div class="collection-image">
+                                <img src="images/hero/unisex.jpg" alt="Unisex Perfumes">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <h3>Unisex</h3>
+                            <span class="shop-now-btn">Shop Now</span>
+                        </a>
+                    </div>
+
+                    <!-- Collection 4: Best Sellers -->
+                    <div class="collection-item">
+                        <a href="#shop?category=best-sellers">
+                            <div class="collection-image">
+                                <img src="images/hero/dd.jpg" alt="Best Sellers Perfumes">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <h3>Best Sellers</h3>
+                            <span class="shop-now-btn">Shop Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>Our Story</h2>
+                    <p>
+                        Discover a world of exquisite scents, handpicked for elegance, style, and timeless appeal.
+                        Every fragrance tells a story - at PM Fragrances, we help you find the one that speaks to yours.
+                    </p>
+                    <a href="#about" class="readmore-link">Read More About Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="images/hero/blue-eu-channel.jpg" alt="Luxury Perfume Collection">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials">
+            <div class="container testimonials-container">
+                <h2>What Our Customers Say</h2>
+
+                <div class="testimonial-grid">
+                    <!-- Testimonial 1 -->
+                    <blockquote class="testimonial">
+                        <p>"Every fragrance I've purchased from PM Fragrances has been authentic and luxurious. I get
+                            compliments wherever I go!"</p>
+                        <footer class="client-name">— Thabo M</footer>
+                    </blockquote>
+
+                    <!-- Testimonial 2 -->
+                    <blockquote class="testimonial">
+                        <p>"The best selection of Dubai and designer perfumes! Fast delivery and the scents are truly
+                            amazing."</p>
+                        <footer class="client-name">— Amahle M</footer>
+                    </blockquote>
+
+                    <!-- Testimonial 3 -->
+                    <blockquote class="testimonial">
+                        <p>"I finally found my signature scent thanks to PM Fragrances. Highly recommended!"</p>
+                        <footer class="client-name">— Sipho D</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faqs">
+        <div class="container faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Are the perfumes authentic?</h3>
+                <p>Yes, we guarantee that all our perfumes are 100% authentic and sourced directly from reputable
+                    suppliers.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is your return policy?</h3>
+                <p>We accept returns within 14 days of purchase. The product must be unused and in its original
+                    packaging.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer international shipping?</h3>
+                <p>Currently, we only ship within South Africa. We are working on expanding our shipping options in
+                    the future.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="home-footer" role="contentinfo">
+        <div class="container footer-container">
+
+            <!-- Company Logo & Tagline -->
+            <div class="company-logo">
+                <a href="#home" aria-label="PM Fragrances - Home">
+                    <h2>PM Fragrances</h2>
+                    <img src="images/icons/search.png" class="footer-logo" alt="PM Fragrances Logo">
+                </a>
+                <p class="footer-tagline">Curated Luxury Fragrances from Around the World</p>
+            </div>
+
+            <!-- Quick Links -->
+            <nav class="quick-links" aria-label="Footer Navigation">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#sign">Sign In</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contact Information -->
+            <div class="contact" id="contact">
+                <h3>Contact Us</h3>
+                <p>Email: mlamulipeace01@gmail.com</p>
+                <p>Phone: +27 79 168 1131</p>
+                <p>WhatsApp: +27 79 168 1131</p>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons" aria-label="Follow us on social media">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                    <img src="images/icons/facebook.png" alt="Facebook Icon" width="30">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener">
+                    <img src="images/icons/tik-tok.png" alt="TikTok Icon" width="30">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                    <img src="images/icons/social.png" alt="Instagram Icon" width="30">
+                </a>
+            </div>
+
+            <!-- Credits / Legal -->
+            <div class="developer-credits">
+                <p>&copy; 2025 PM Fragrances. All rights reserved. Powered by Peacemaker Dev</p>
+            </div>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+</body>

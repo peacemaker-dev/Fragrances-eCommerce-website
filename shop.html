@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop – PM Fragrances</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header (same as homepage) -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html"><h1>PM <span>Fragrances</span></h1></a>
+      </div>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-icons">
+        <button class="icon-btn"><img src="images/icons/search.png" alt="Search" width="24"></button>
+        <button class="icon-btn"><img src="images/icons/shopping-cart.png" alt="Cart" width="24"></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="shop-hero">
+    <div class="overlay"></div>
+    <div class="shop-hero-content">
+      <h2>Discover Your Signature Scent</h2>
+      <p>Explore our exclusive collection of perfumes crafted for every style and personality.</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="for-him">For Him</button>
+    <button class="filter-btn" data-category="for-her">For Her</button>
+    <button class="filter-btn" data-category="unisex">Unisex</button>
+    <button class="filter-btn" data-category="best-sellers">Best Sellers</button>
+  </div>
+
+  <!-- Product Grid -->
+  <section class="product-grid container">
+    <div class="product-card" data-category="for-him">
+      <img src="images/products/bleu-de-chanel.jpg" alt="Bleu de Chanel">
+      <h3>Bleu de Chanel</h3>
+      <p class="price">R1,499</p>
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+
+    <div class="product-card" data-category="for-her">
+      <img src="images/products/dior-bloom.jpg" alt="Dior Bloom">
+      <h3>Dior Bloom</h3>
+      <p class="price">R1,299</p>
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+
+    <div class="product-card" data-category="unisex">
+      <img src="images/products/tom-ford-oud.jpg" alt="Tom Ford Oud Wood">
+      <h3>Tom Ford Oud Wood</h3>
+      <p class="price">R2,099</p>
+      <button class="btn btn-primary">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="home-footer">
+    <div class="container footer-container">
+      <p>&copy; 2025 PM Fragrances. All rights reserved. Powered by Peacemaker Dev</p>
+    </div>
+  </footer>
+
+  <script src="shop.js"></script>
+</body>
+</html>
