@@ -1,83 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop – PM Fragrances</title>
+  <title>Shop - PM Fragrances</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <!-- Header (same as homepage) -->
   <header class="site-header">
     <div class="container header-container">
       <div class="logo">
-        <a href="index.html"><h1>PM <span>Fragrances</span></h1></a>
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Toggle Menu">
+          <img src="images/icons/option.png" alt="Menu Icon" width="28">
+        </button>
+        <a href="index.html">
+          <h1>PM <span>Fragrances</span></h1>
+        </a>
       </div>
-      <nav class="nav">
+
+      <!-- Navigation -->
+      <nav class="nav" aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html" class="active">Shop</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-menu">
+          <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#profile">Profile</a></li>
+          </ul>
+        </div>
       </nav>
+
+      <!-- Icons -->
       <div class="header-icons">
-        <button class="icon-btn"><img src="images/icons/search.png" alt="Search" width="24"></button>
-        <button class="icon-btn"><img src="images/icons/shopping-cart.png" alt="Cart" width="24"></button>
+        <button class="icon-btn" aria-label="Search">
+          <img src="images/icons/search.png" alt="Search" width="26">
+        </button>
+        <button class="icon-btn" aria-label="Shopping Cart">
+          <img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="26">
+        </button>
+        <button class="icon-btn" aria-label="User Account">
+          <img src="images/icons/user.png" alt="User Account" width="26">
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="shop-hero">
-    <div class="overlay"></div>
-    <div class="shop-hero-content">
-      <h2>Discover Your Signature Scent</h2>
-      <p>Explore our exclusive collection of perfumes crafted for every style and personality.</p>
-    </div>
-  </section>
+  <main class="shop-main">
+    <section class="filter-section container">
+      <div class="filter-controls">
+        <!-- Sort Icon (Left) -->
+        <div class="left">
+          <div class="view-icon">
+            <img src="images/icons/view-grid.png" alt="Grid View Icon" width="20">
+          </div>
+          <div class="sort-box">
+            <img src="images/icons/sort.png" alt="Sort Icon" width="22">
+          </div>
+        </div>
 
-  <!-- Filter Bar -->
-  <div class="filter-bar">
-    <button class="filter-btn active" data-category="all">All</button>
-    <button class="filter-btn" data-category="for-him">For Him</button>
-    <button class="filter-btn" data-category="for-her">For Her</button>
-    <button class="filter-btn" data-category="unisex">Unisex</button>
-    <button class="filter-btn" data-category="best-sellers">Best Sellers</button>
-  </div>
+        <!-- Must open when the sort icon is clicked -->
+        <div class="sort-options">
+          <ul>
+            <li>Price: Low to High</li>
+            <li>Price: High to Low</li>
+          </ul>
+        </div>
 
-  <!-- Product Grid -->
-  <section class="product-grid container">
-    <div class="product-card" data-category="for-him">
-      <img src="images/products/bleu-de-chanel.jpg" alt="Bleu de Chanel">
-      <h3>Bleu de Chanel</h3>
-      <p class="price">R1,499</p>
-      <button class="btn btn-primary">Add to Cart</button>
-    </div>
+        <!-- Category (Center, Across Screen) -->
+        <div class="category-scroll">
+          <select id="filter-category">
+            <option value="">SELECT A CATEGORY</option>
+            <option value="all">All</option>
+            <option value="men">Men</option>
+            <option value="women">Women</option>
+            <option value="unisex">Unisex</option>
+          </select>
+        </div>
 
-    <div class="product-card" data-category="for-her">
-      <img src="images/products/dior-bloom.jpg" alt="Dior Bloom">
-      <h3>Dior Bloom</h3>
-      <p class="price">R1,299</p>
-      <button class="btn btn-primary">Add to Cart</button>
-    </div>
+        <!-- Filter (Right) -->
+        <div class="filter-box">
+          <select id="filter-season">
+            <option value="">Filter By</option>
+            <option value="summer">Summer</option>
+            <option value="winter">Winter</option>
+            <option value="all-year">All Year</option>
+          </select>
+        </div>
+      </div>
+    </section>
 
-    <div class="product-card" data-category="unisex">
-      <img src="images/products/tom-ford-oud.jpg" alt="Tom Ford Oud Wood">
-      <h3>Tom Ford Oud Wood</h3>
-      <p class="price">R2,099</p>
-      <button class="btn btn-primary">Add to Cart</button>
-    </div>
-  </section>
+    <!-- Product Grid -->
+    <section class="product-grid container">
+      <article class="product-card" data-category="men">
+        <img src="images/products/ramz-silver.jpg" alt="Ramz Silver Perfume Bottle" class="product-image"
+          loading="lazy">
+        <div class="product-info">
+          <h3 class="product-name">Ramz Silver</h3>
+          <span class="product-maker">By Lattafa</span>
+          <p class="product-price">R1,199</p>
+          <button class="btn btn-primary add-to-cart" data-product-id="001" data-price="1199">Add to Cart</button>
+        </div>
+      </article>
 
+      <article class="product-card" data-category="women">
+        <img src="images/products/zarar-women.jpg" alt="Zarar Women Perfume Bottle" class="product-image"
+          loading="lazy">
+        <div class="product-info">
+          <h3 class="product-name">Zarar Women</h3>
+          <span class="product-maker">By Al Haramain</span>
+          <p class="product-price">R999</p>
+          <button class="btn btn-primary add-to-cart" data-product-id="002" data-price="999">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="unisex">
+        <img src="images/products/art-of-universe.jpg" alt="Art of Universe Perfume Bottle" class="product-image"
+          loading="lazy">
+        <div class="product-info">
+          <h3 class="product-name">Art of Universe</h3>
+          <span class="product-maker">By Fragrance World</span>
+          <p class="product-price">R1,499</p>
+          <button class="btn btn-primary add-to-cart" data-product-id="003" data-price="1499">Add to Cart</button>
+        </div>
+      </article>
+      <article class="product-card" data-category="women">
+        <img src="images/products/zarar-women.jpg" alt="Zarar Women Perfume Bottle" class="product-image"
+          loading="lazy">
+        <div class="product-info">
+          <h3 class="product-name">Zarar Women</h3>
+          <span class="product-maker">By Al Haramain</span>
+          <p class="product-price">R999</p>
+          <button class="btn btn-primary add-to-cart" data-product-id="002" data-price="999">Add to Cart</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-category="unisex">
+        <img src="images/products/art-of-universe.jpg" alt="Art of Universe Perfume Bottle" class="product-image"
+          loading="lazy">
+        <div class="product-info">
+          <h3 class="product-name">Art of Universe</h3>
+          <span class="product-maker">By Fragrance World</span>
+          <p class="product-price">R1,499</p>
+          <button class="btn btn-primary add-to-cart" data-product-id="003" data-price="1499">Add to Cart</button>
+        </div>
+      </article>
+    </section>
+  </main>
   <!-- Footer -->
-  <footer class="home-footer">
-    <div class="container footer-container">
-      <p>&copy; 2025 PM Fragrances. All rights reserved. Powered by Peacemaker Dev</p>
+  <footer class="multi-page-footer">
+    <div class="multi-page-footer-container">
+      <p>&copy; 2025 <span class="brand">PM Fragrances</span>. All rights reserved.</p>
+      <p class="powered">Powered by <strong>Peacemaker Dev</strong></p>
     </div>
   </footer>
-
-  <script src="shop.js"></script>
+  <script src="home.js"></script><!-- Script for navigation -->
 </body>
+
 </html>
