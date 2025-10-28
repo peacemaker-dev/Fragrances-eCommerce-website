@@ -102,15 +102,15 @@ body {
   .logo h1 {
     font-size: 1.6rem;
   }
-
+  .profile {/* Hide profile icon on mobile */
+    display: none;
+  }
   .header-icons {
     gap: 0.2rem;
   }
-
   .site-header {
     padding: 0.5rem 0;
   }
-
   .icon-btn img {
     margin-left: 0.5rem;
   }
@@ -122,54 +122,87 @@ body {
   border: none;
   cursor: pointer;
   display: none;
-  max-width: 0 auto;
-  padding: auto;
+  padding: 0.5rem;
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: #221F24;
 }
 
+/* Mobile Menu Container */
 .mobile-menu {
   display: none;
   background-color: #ffffff;
   border-top: 1px solid #e5e7eb;
-  padding: 0.5rem;
   position: absolute;
   top: 100%;
   left: 0;
+  right: 0;
   width: 100%;
   z-index: 999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
 }
 
+/* Active State */
 .mobile-menu.active {
   display: block;
+  animation: slideDown 0.3s ease-in-out;
 }
 
+/* Navigation Links */
 .mobile-nav-links {
   list-style: none;
-  padding: 0;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 
-.mobile-nav-links li a {
-  display: block;
-  padding: 0.5rem 0;
+.mobile-nav-links li a{
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.6rem 0.5rem;
+  border-radius: 10px;
   color: #221F24;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.mobile-nav-links li a img:hover {
+  filter: brightness(0) invert(1);
 }
 
 .mobile-nav-links li a:hover {
-  color: #C43E46;
+  background-color: #C43E46;
+  color: #fff;
 }
 
 /* Responsive Header */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
-    overflow-x: hidden;
   }
-
   .nav-links {
     display: none;
   }
 }
+
+/* Slide-down Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /*================== Hero Section ================== */
 .hero {
@@ -226,7 +259,7 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.btn-primary {
+.hero-btn {
   background-color: #C43E46;
   color: #ffffff;
   padding: 0.75rem 1.5rem;
@@ -237,7 +270,7 @@ body {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn-primary:hover {
+.hero-btn:hover {
   background-color: #7D1119;
   transform: translateY(-2px);
 }
@@ -313,7 +346,7 @@ body {
     font-size: 1rem;
   }
 
-  .btn-primary {
+  .hero-btn {
     width: 100%;
     text-align: center;
   }
@@ -745,7 +778,7 @@ body {
 .home-footer {
   background-color: #000000;
   color: #F4F4F6;
-  padding: 4rem 2rem 2rem;
+  padding: 4rem 2rem 1rem;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -1135,4 +1168,73 @@ body {
   .product-price {
     font-size: 0.95rem;
   }
+}
+
+
+/* ===== Product Modal ===== */
+.product-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.product-modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 1rem;
+  max-width: 400px;
+  width: 90%;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  animation: scaleIn 0.25s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-content img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+#modal-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-top: 1rem;
+}
+
+#modal-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0.8rem 0;
+}
+
+#modal-price {
+  color: #C43E46;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
 }

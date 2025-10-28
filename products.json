@@ -1,0 +1,74 @@
+[
+  {
+    "id": "001",
+    "name": "Ramz Silver",
+    "maker": "Lattafa",
+    "category": "men",
+    "price": 1199,
+    "image": "images/products/ramz-silver.jpg",
+    "description": "A luxurious, woody fragrance for men with notes of amber, leather, and musk."
+  },
+  {
+    "id": "002",
+    "name": "Zarar Women",
+    "maker": "Al Haramain",
+    "category": "women",
+    "price": 999,
+    "image": "images/products/zarar-women.jpg",
+    "description": "Elegant and floral, blending jasmine, rose, and musk for a captivating scent."
+  },
+  {
+    "id": "003",
+    "name": "Art of Universe",
+    "maker": "Fragrance World",
+    "category": "unisex",
+    "price": 1499,
+    "image": "images/products/art-of-universe.jpg",
+    "description": "A unisex perfume that embodies cosmic beauty with oud, amber, and vanilla."
+  },
+  {
+    "id": "004",
+    "name": "Barakkat Rouge 540",
+    "maker": "Fragrance World",
+    "category": "unisex",
+    "price": 1499,
+    "image": "images/products/barakkat-rouge-540.jpg",
+    "description": "A warm amber floral scent with saffron and cedarwood."
+  },
+  {
+    "id": "005",
+    "name": "Club de Nuit Intense",
+    "maker": "Armaf",
+    "category": "men",
+    "price": 899,
+    "image": "images/products/club-de-nuit-intense.jpg",
+    "description": "Strong, masculine blend of citrus, spice, and smoky woods."
+  },
+  {
+    "id": "006",
+    "name": "Enchantment Blue Intense",
+    "maker": "Fragrance World",
+    "category": "men",
+    "price": 1099,
+    "image": "images/products/enchantment-blue-intense.jpg",
+    "description": "Fresh oceanic fragrance with subtle musk undertones."
+  },
+  {
+    "id": "007",
+    "name": "Qaed Al Fursan",
+    "maker": "Lattafa",
+    "category": "unisex",
+    "price": 1199,
+    "image": "images/products/qaed-al-fursan.jpg",
+    "description": "Rich, bold, and woody scent for confident individuals."
+  },
+  {
+    "id": "008",
+    "name": "Honor & Glory",
+    "maker": "Afnan",
+    "category": "men",
+    "price": 1399,
+    "image": "images/products/honor-and-glory.webp",
+    "description": "A heroic mix of spice, oud, and amber that lasts all day."
+  }
+]

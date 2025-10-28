@@ -33,11 +33,27 @@
         <!-- Mobile Dropdown Menu -->
         <div class="mobile-menu">
           <ul class="mobile-nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#profile">Profile</a></li>
+            <li>
+              <a href="#home"><img src="images/icons/home.png" alt="Home" width="24">Home</a>
+            </li>
+            <li>
+              <a href="shop.html"><img src="images/icons/shop.png" alt="Shopping" width="24">Shop</a>
+            </li>
+            <li>
+              <a href="#cart"><img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="24">Cart</a>
+            </li>
+            <li>
+              <a href="#contact"><img src="images/icons/contact.png" alt="Customer Service" width="24">Contact</a>
+            </li>
+            <li>
+              <a href="#about"><img src="images/icons/about.png" alt="About" width="24">About Us</a>
+            </li>
+            <li>
+              <a href="#signin"><img src="images/icons/log-in.png" alt="Sign In" width="24">Sign In</a>
+            </li>
+            <li>
+              <a href="#signup"><img src="images/icons/sign-up.png" alt="Sign Up" width="24">Sign Up</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -101,61 +117,22 @@
       </div>
     </section>
 
-    <!-- Product Grid -->
-    <section class="product-grid container">
-      <article class="product-card" data-category="men">
-        <img src="images/products/ramz-silver.jpg" alt="Ramz Silver Perfume Bottle" class="product-image"
-          loading="lazy">
-        <div class="product-info">
-          <h3 class="product-name">Ramz Silver</h3>
-          <span class="product-maker">By Lattafa</span>
-          <p class="product-price">R1,199</p>
-          <button class="btn btn-primary add-to-cart" data-product-id="001" data-price="1199">Add to Cart</button>
-        </div>
-      </article>
+    <!-- Product Grid for displaying products -->
+    <section class="product-grid container" id="product-grid"></section>
 
-      <article class="product-card" data-category="women">
-        <img src="images/products/zarar-women.jpg" alt="Zarar Women Perfume Bottle" class="product-image"
-          loading="lazy">
-        <div class="product-info">
-          <h3 class="product-name">Zarar Women</h3>
-          <span class="product-maker">By Al Haramain</span>
-          <p class="product-price">R999</p>
-          <button class="btn btn-primary add-to-cart" data-product-id="002" data-price="999">Add to Cart</button>
-        </div>
-      </article>
+    <!-- Product modal -->
+    <div class="product-modal" id="product-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img id="modal-image" src="" alt="">
+        <h3 id="modal-name"></h3>
+        <p id="modal-desc"></p>
+        <p id="modal-price"></p>
+        <button class="btn btn-primary" id="modal-add-cart">Add to Cart</button>
+      </div>
+    </div>
+    <!-- End of Product modal -->
 
-      <article class="product-card" data-category="unisex">
-        <img src="images/products/art-of-universe.jpg" alt="Art of Universe Perfume Bottle" class="product-image"
-          loading="lazy">
-        <div class="product-info">
-          <h3 class="product-name">Art of Universe</h3>
-          <span class="product-maker">By Fragrance World</span>
-          <p class="product-price">R1,499</p>
-          <button class="btn btn-primary add-to-cart" data-product-id="003" data-price="1499">Add to Cart</button>
-        </div>
-      </article>
-      <article class="product-card" data-category="women">
-        <img src="images/products/zarar-women.jpg" alt="Zarar Women Perfume Bottle" class="product-image"
-          loading="lazy">
-        <div class="product-info">
-          <h3 class="product-name">Zarar Women</h3>
-          <span class="product-maker">By Al Haramain</span>
-          <p class="product-price">R999</p>
-          <button class="btn btn-primary add-to-cart" data-product-id="002" data-price="999">Add to Cart</button>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="unisex">
-        <img src="images/products/art-of-universe.jpg" alt="Art of Universe Perfume Bottle" class="product-image"
-          loading="lazy">
-        <div class="product-info">
-          <h3 class="product-name">Art of Universe</h3>
-          <span class="product-maker">By Fragrance World</span>
-          <p class="product-price">R1,499</p>
-          <button class="btn btn-primary add-to-cart" data-product-id="003" data-price="1499">Add to Cart</button>
-        </div>
-      </article>
     </section>
   </main>
   <!-- Footer -->
@@ -166,6 +143,8 @@
     </div>
   </footer>
   <script src="home.js"></script><!-- Script for navigation -->
+  <script src="shop.js"></script><!-- Script for listing and storing products -->
+  <script src="modal.js"></script><!-- Script for modal -->
 </body>
 
 </html>
