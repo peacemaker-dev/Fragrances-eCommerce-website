@@ -2,9 +2,16 @@ document.addEventListener("DOMContentLoaded", function () {
     //Menu toggle
     const menuToggle = document.querySelector(".menu-toggle");
     const mobileMenu = document.querySelector(".mobile-menu");
+    const closeModal = document.querySelector('.close-menu-modal');
 
-    menuToggle.addEventListener("click", function () {
-        mobileMenu.classList.toggle("active");
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+
+    closeModal.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
     });
 
     //Auto Dynamic Change

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop - PM Fragrances</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -32,6 +34,10 @@
 
         <!-- Mobile Dropdown Menu -->
         <div class="mobile-menu">
+          <div class="company-logo-mobile">
+            <h1>PM Fragrances</h1>
+            <span class="close-menu-modal">&times;</span>
+          </div>
           <ul class="mobile-nav-links">
             <li>
               <a href="#home"><img src="images/icons/home.png" alt="Home" width="24">Home</a>
@@ -44,6 +50,9 @@
             </li>
             <li>
               <a href="#contact"><img src="images/icons/contact.png" alt="Customer Service" width="24">Contact</a>
+            </li>
+            <li>
+              <a href="#contact"><img src="images/icons/chat.png" alt="FAQ" width="24">FAQs</a>
             </li>
             <li>
               <a href="#about"><img src="images/icons/about.png" alt="About" width="24">About Us</a>
@@ -124,7 +133,7 @@
     <div class="product-modal" id="product-modal">
       <div class="modal-content">
         <span class="close-modal">&times;</span>
-
+        <h2 id="modal-name"></h2><!-- Product Name -->
         <!-- Product Images -->
         <div class="modal-images">
           <img id="modal-image1" src="" alt="Product Image 1">
@@ -132,9 +141,9 @@
         </div>
 
         <!-- Product Info -->
-        <h2 id="modal-name"></h2>
         <div class="modal-desc-cont">
-          <p><strong>Description:</strong> <span id="modal-desc"></span></p>
+          <p><strong>Description:</strong></p>
+          <span id="modal-desc"></span>
         </div>
 
         <div class="modal-notes">
@@ -148,15 +157,24 @@
 
         <!-- Bottom Actions -->
         <div class="modal-actions">
-          <div class="quantity-control">
-            <button id="decrease-qty">−</button>
-            <span id="quantity-value">1</span>
-            <button id="increase-qty">+</button>
-          </div>
+  <div class="quantity-control">
+    <label for="quantity-value">Qty:</label>
+    <select id="quantity-value">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
 
-          <button id="add-to-cart" class="btn btn-primary">Add to Cart</button>
-          <button id="fav-btn" class="fav-btn">❤️</button>
-        </div>
+  <button class="modal-cart-btn">Add to Cart</button>
+
+  <button class="fav-btn" title="Add to Favourites">
+    <i class="fa-solid fa-heart"></i>
+  </button>
+</div>
+
       </div>
     </div>
     <!-- End of Product modal -->

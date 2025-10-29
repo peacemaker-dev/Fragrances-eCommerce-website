@@ -35,12 +35,17 @@ function setupModal(products) {
       qtyValue.textContent = 1;
 
       modal.classList.add("active");
+      document.body.classList.add("modal-open");
     }
   });
 
-  closeModal.addEventListener("click", () => modal.classList.remove("active"));
+  closeModal.addEventListener("click", e => {
+    modal.classList.remove("active")
+    document.body.classList.remove("modal-open");
+  });
   modal.addEventListener("click", e => {
     if (e.target === modal) modal.classList.remove("active");
+    document.body.classList.remove("modal-open");
   });
 
   increaseQty.addEventListener("click", () => {
