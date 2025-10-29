@@ -5,8 +5,12 @@
     "maker": "Lattafa",
     "category": "men",
     "price": 1199,
-    "image": "images/products/ramz-silver.jpg",
-    "description": "A luxurious, woody fragrance for men with notes of amber, leather, and musk."
+    "image1": "images/products/ramz-silver.jpg",
+    "image2": "images/products/ramz-silver.jpg",
+    "description": "Ramz Silver by Lattafa is a sophisticated blend that captures the confidence of a modern man. Opening with fresh citrus and warm amber, the scent soon unfolds into rich leather and woody cedarwood. The base settles into smooth musk and vanilla, creating a bold yet elegant trail that lasts all day. Ideal for evening wear and special occasions.",
+    "topNotes": "Amber, Bergamot, Citrus",
+    "middleNotes": "Leather, Cedarwood, Patchouli",
+    "baseNotes": "Musk, Vanilla, Ambergris"
   },
   {
     "id": "002",
@@ -14,8 +18,12 @@
     "maker": "Al Haramain",
     "category": "women",
     "price": 999,
-    "image": "images/products/zarar-women.jpg",
-    "description": "Elegant and floral, blending jasmine, rose, and musk for a captivating scent."
+    "image1": "images/products/zarar-women.jpg",
+    "image2": "images/products/zarar-women.jpg",
+    "description": "Zarar Women by Al Haramain is a timeless fragrance crafted for the confident, elegant woman. It opens with bright florals and soft fruits, blending seamlessly into a romantic heart of rose and jasmine. The base notes of musk and amber add depth and sensuality, making it perfect for both day and evening wear.",
+    "topNotes": "Fruity Notes, Orange Blossom",
+    "middleNotes": "Rose, Jasmine, Lily of the Valley",
+    "baseNotes": "Musk, Amber, Sandalwood"
   },
   {
     "id": "003",
@@ -23,8 +31,12 @@
     "maker": "Fragrance World",
     "category": "unisex",
     "price": 1499,
-    "image": "images/products/art-of-universe.jpg",
-    "description": "A unisex perfume that embodies cosmic beauty with oud, amber, and vanilla."
+    "image1": "images/products/art-of-universe.jpg",
+    "image2": "images/products/art-of-universe.jpg",
+    "description": "Art of Universe is a cosmic fragrance that embodies elegance and mystery. The scent opens with spicy and warm notes of saffron and cardamom before revealing a heart of oud and amber. The base features smooth vanilla and sandalwood, leaving behind an enchanting and long-lasting trail that’s perfect for any occasion.",
+    "topNotes": "Saffron, Cardamom",
+    "middleNotes": "Oud, Amber, Jasmine",
+    "baseNotes": "Vanilla, Sandalwood, Musk"
   },
   {
     "id": "004",
@@ -32,8 +44,12 @@
     "maker": "Fragrance World",
     "category": "unisex",
     "price": 1499,
-    "image": "images/products/barakkat-rouge-540.jpg",
-    "description": "A warm amber floral scent with saffron and cedarwood."
+    "image1": "images/products/barakkat-rouge-540.jpg",
+    "image2": "images/products/barakkat-rouge-540.jpg",
+    "description": "Barakkat Rouge 540 is a luxurious amber floral fragrance that radiates elegance. It opens with luminous saffron and jasmine before unfolding into rich amberwood and cedar. Its base reveals subtle musk and resin tones, creating a unique scent that’s powerful yet delicately balanced. A modern masterpiece of sophistication.",
+    "topNotes": "Saffron, Jasmine",
+    "middleNotes": "Amberwood, Ambergris",
+    "baseNotes": "Cedar, Musk, Resin"
   },
   {
     "id": "005",
@@ -41,8 +57,12 @@
     "maker": "Armaf",
     "category": "men",
     "price": 899,
-    "image": "images/products/club-de-nuit-intense.jpg",
-    "description": "Strong, masculine blend of citrus, spice, and smoky woods."
+    "image1": "images/products/club-de-nuit-intense.jpg",
+    "image2": "images/products/club-de-nuit-intense.jpg",
+    "description": "Club de Nuit Intense Man by Armaf is a cult favorite known for its bold and smoky sophistication. The scent bursts open with citrus and pineapple, evolving into a heart of birch and jasmine. As it dries down, the warm ambergris and musk base lingers with magnetic confidence. Perfect for men who demand attention and presence.",
+    "topNotes": "Lemon, Pineapple, Bergamot",
+    "middleNotes": "Birch, Jasmine, Rose",
+    "baseNotes": "Ambergris, Musk, Vanilla, Patchouli"
   },
   {
     "id": "006",
@@ -50,8 +70,12 @@
     "maker": "Fragrance World",
     "category": "men",
     "price": 1099,
-    "image": "images/products/enchantment-blue-intense.jpg",
-    "description": "Fresh oceanic fragrance with subtle musk undertones."
+    "image1": "images/products/enchantment-blue-intense.jpg",
+    "image2": "images/products/enchantment-blue-intense.jpg",
+    "description": "Enchantment Blue Intense captures the refreshing spirit of ocean breeze and masculine energy. It opens with crisp citrus and aquatic notes, followed by a heart of aromatic herbs and floral tones. The base combines amber and musk, delivering a clean, invigorating finish perfect for everyday wear.",
+    "topNotes": "Citrus, Marine Notes, Lavender",
+    "middleNotes": "Geranium, Pepper, Neroli",
+    "baseNotes": "Amber, Musk, Vetiver"
   },
   {
     "id": "007",
@@ -59,8 +83,12 @@
     "maker": "Lattafa",
     "category": "unisex",
     "price": 1199,
-    "image": "images/products/qaed-al-fursan.jpg",
-    "description": "Rich, bold, and woody scent for confident individuals."
+    "image1": "images/products/qaed-al-fursan.jpg",
+    "image2": "images/products/qaed-al-fursan.jpg",
+    "description": "Qaed Al Fursan by Lattafa is a bold, unisex fragrance that commands attention. It opens with fruity sweetness and rich vanilla, deepening into smoky wood and leather accords. The base leaves an unforgettable mix of musk and amber that exudes power and mystery, ideal for those who stand out effortlessly.",
+    "topNotes": "Pineapple, Saffron, Sweet Notes",
+    "middleNotes": "Vanilla, Oud, Leather",
+    "baseNotes": "Musk, Amber, Sandalwood"
   },
   {
     "id": "008",
@@ -68,7 +96,11 @@
     "maker": "Afnan",
     "category": "men",
     "price": 1399,
-    "image": "images/products/honor-and-glory.webp",
-    "description": "A heroic mix of spice, oud, and amber that lasts all day."
+    "image1": "images/products/honor-and-glory.webp",
+    "image2": "images/products/honor-and-glory.webp",
+    "description": "Honor & Glory by Afnan is a fragrance of victory and strength. It opens with spicy cardamom and pepper, transitioning into warm amber and smoky oud. The scent settles into a base of musk and patchouli, leaving a trail that’s both regal and enduring. Perfect for men who carry themselves with pride and determination.",
+    "topNotes": "Cardamom, Pepper, Citrus",
+    "middleNotes": "Amber, Oud, Cedarwood",
+    "baseNotes": "Patchouli, Musk, Tonka Bean"
   }
 ]

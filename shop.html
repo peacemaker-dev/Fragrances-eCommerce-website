@@ -120,15 +120,43 @@
     <!-- Product Grid for displaying products -->
     <section class="product-grid container" id="product-grid"></section>
 
-    <!-- Product modal -->
+    <!-- Product Modal -->
     <div class="product-modal" id="product-modal">
       <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <img id="modal-image" src="" alt="">
-        <h3 id="modal-name"></h3>
-        <p id="modal-desc"></p>
-        <p id="modal-price"></p>
-        <button class="btn btn-primary" id="modal-add-cart">Add to Cart</button>
+
+        <!-- Product Images -->
+        <div class="modal-images">
+          <img id="modal-image1" src="" alt="Product Image 1">
+          <img id="modal-image2" src="" alt="Product Image 2">
+        </div>
+
+        <!-- Product Info -->
+        <h2 id="modal-name"></h2>
+        <div class="modal-desc-cont">
+          <p><strong>Description:</strong> <span id="modal-desc"></span></p>
+        </div>
+
+        <div class="modal-notes">
+          <p><strong>Top Notes:</strong> <span id="modal-top"></span></p>
+          <p><strong>Middle Notes:</strong> <span id="modal-middle"></span></p>
+          <p><strong>Base Notes:</strong> <span id="modal-base"></span></p>
+          <p><strong>Maker:</strong> <span id="modal-maker"></span></p>
+        </div>
+
+        <p><strong>Price:</strong> <span id="modal-price"></span></p>
+
+        <!-- Bottom Actions -->
+        <div class="modal-actions">
+          <div class="quantity-control">
+            <button id="decrease-qty">−</button>
+            <span id="quantity-value">1</span>
+            <button id="increase-qty">+</button>
+          </div>
+
+          <button id="add-to-cart" class="btn btn-primary">Add to Cart</button>
+          <button id="fav-btn" class="fav-btn">❤️</button>
+        </div>
       </div>
     </div>
     <!-- End of Product modal -->

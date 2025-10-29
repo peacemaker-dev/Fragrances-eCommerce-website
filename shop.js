@@ -23,7 +23,7 @@ function renderProducts(list) {
   list.forEach(p => {
     const card = `
       <article class="product-card" data-category="${p.category}" data-id="${p.id}">
-        <img src="${p.image}" alt="${p.name}" class="product-image" loading="lazy">
+        <img src="${p.image1}" alt="${p.name}" class="product-image" loading="lazy">
         <div class="product-info">
           <h3 class="product-name">${p.name}</h3>
           <span class="product-maker">By ${p.maker}</span>
