@@ -940,7 +940,6 @@ body {
 
 .filter-section {
   width: 100%;
-  max-width: 300px;
   padding: 0.8rem 1.5rem;
   background: #fff;
   border-bottom: 1px solid #e5e7eb;
@@ -1141,6 +1140,35 @@ body {
   font-weight: 700;
 }
 
+.product-btns {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-fav-btn {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  margin: 0 0.5rem;
+  margin-top: 0.5rem;
+  align-self: center;
+  color: #C43E46;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.shop-fav-btn:active {
+  transform: scale(0.9);
+}
+
+.shop-fav-btn:hover {
+  transform: scale(1.1);
+  color: #A52C34;
+}
+
 .btn.btn-primary {
   background-color: #C43E46;
   color: #fff;
@@ -1191,6 +1219,7 @@ body {
   background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
+  overflow: visible;
   z-index: 1200;
 }
 
@@ -1351,10 +1380,15 @@ body {
   background: none;
   border: none;
   font-size: 1.6rem;
+  align-self: center;
   color: #C43E46;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.2s ease;
   flex-shrink: 0;
+}
+
+.fav-btn:active {
+  transform: scale(0.9);
 }
 
 .fav-btn:hover {
@@ -1381,7 +1415,6 @@ select {
     text-align: center;
   }
 }
-
 
 /* Prevent body scroll when modal is active */
 body.modal-open {

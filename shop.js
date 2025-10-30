@@ -28,9 +28,14 @@ function renderProducts(list) {
           <h3 class="product-name">${p.name}</h3>
           <span class="product-maker">By ${p.maker}</span>
           <p class="product-price">R${p.price.toLocaleString()}</p>
-          <button class="btn btn-primary add-to-cart" data-product-id="${p.id}" data-price="${p.price}">
-            Add to Cart
-          </button>
+          <div class="product-btns">
+            <button class="btn btn-primary add-to-cart" data-product-id="${p.id}" data-price="${p.price}">
+              Add to Cart
+            </button>
+            <button class="shop-fav-btn" title="Add to Favourites">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
         </div>
       </article>
     `;
