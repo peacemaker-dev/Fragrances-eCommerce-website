@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop - PM Fragrances</title>
+  <title>Shop - Grootman Fragrances</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- Great Vibes -->
 
 </head>
 
@@ -19,7 +20,7 @@
           <img src="images/icons/option.png" alt="Menu Icon" width="28">
         </button>
         <a href="index.html">
-          <h1>PM <span>Fragrances</span></h1>
+          <h1><span class="company-name">Grootman</span> Fragrances</h1>
         </a>
       </div>
 
@@ -28,14 +29,14 @@
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html" class="active">Shop</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
         <!-- Mobile Dropdown Menu -->
         <div class="mobile-menu">
           <div class="company-logo-mobile">
-            <h1>PM Fragrances</h1>
+            <h1><span class="company-name">Grootman</span> Fragrances</h1>
             <span class="close-menu-modal">&times;</span>
           </div>
           <ul class="mobile-nav-links">
@@ -46,7 +47,7 @@
               <a href="shop.html"><img src="images/icons/shop.png" alt="Shopping" width="24">Shop</a>
             </li>
             <li>
-              <a href="#cart"><img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="24">Cart</a>
+              <a href="cart.html"><img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="24">Cart</a>
             </li>
             <li>
               <a href="#contact"><img src="images/icons/contact.png" alt="Customer Service" width="24">Contact</a>
@@ -55,28 +56,24 @@
               <a href="#contact"><img src="images/icons/chat.png" alt="FAQ" width="24">FAQs</a>
             </li>
             <li>
-              <a href="#about"><img src="images/icons/about.png" alt="About" width="24">About Us</a>
+              <a href="about.html"><img src="images/icons/about.png" alt="About" width="24">About Us</a>
             </li>
-            <li>
-              <a href="#signin"><img src="images/icons/log-in.png" alt="Sign In" width="24">Sign In</a>
-            </li>
-            <li>
-              <a href="#signup"><img src="images/icons/sign-up.png" alt="Sign Up" width="24">Sign Up</a>
-            </li>
+            <div class="hidden"><!-- Hidden for future scaling -->
+              <li>
+                <a href="#signin"><img src="images/icons/log-in.png" alt="Sign In" width="24">Sign In</a>
+              </li>
+              <li>
+                <a href="#signup"><img src="images/icons/sign-up.png" alt="Sign Up" width="24">Sign Up</a>
+              </li>
+            </div>
           </ul>
         </div>
       </nav>
 
       <!-- Icons -->
       <div class="header-icons">
-        <button class="icon-btn" aria-label="Search">
-          <img src="images/icons/search.png" alt="Search" width="26">
-        </button>
         <button class="icon-btn" aria-label="Shopping Cart" onclick="window.location.href='cart.html'">
           <img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="26">
-        </button>
-        <button class="icon-btn" aria-label="User Account">
-          <img src="images/icons/user.png" alt="User Account" width="26">
         </button>
       </div>
     </div>
@@ -184,7 +181,7 @@
   <!-- Footer -->
   <footer class="multi-page-footer">
     <div class="multi-page-footer-container">
-      <p>&copy; 2025 <span class="brand">PM Fragrances</span>. All rights reserved.</p>
+      <p>&copy; 2025 <span class="brand">Grootman Fragrances</span>. All rights reserved.</p>
       <p class="powered">Powered by <strong>Peacemaker Dev</strong></p>
     </div>
   </footer>

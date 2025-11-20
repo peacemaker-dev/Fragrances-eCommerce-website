@@ -1,4 +1,3 @@
-// cart.js
 const cartContainer = document.getElementById("cart-items");
 const totalPriceEl = document.getElementById("total-price");
 const emptyCartEl = document.getElementById("empty-cart");

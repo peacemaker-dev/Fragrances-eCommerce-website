@@ -2,9 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fragrances - Home</title>
+    <!-- Basic SEO -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+        content="Grootman Fragrances offers high quality Dubai and Arabian perfumes for men and women at affordable prices. Discover long lasting, luxurious scents imported directly from trusted suppliers." />
+    <meta name="keywords"
+        content="Dubai perfumes, Arabian perfumes, Arabic fragrances, long lasting scents, affordable perfumes, imported fragrances, Grootman Fragrances" />
+    <meta name="author" content="Grootman Fragrances" />
+
+    <title>Grootman Fragrances | Premium Dubai and Arabian Perfumes</title>
+
+    <!-- Open Graph (Social sharing) -->
+    <meta property="og:title" content="Grootman Fragrances | Premium Dubai and Arabian Perfumes" />
+    <meta property="og:description"
+        content="Shop long lasting Dubai and Arabian fragrances for men and women. Premium quality scents imported from trusted suppliers." />
+    <meta property="og:image" content="https://your-domain.com/assets/preview.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-domain.com/" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Grootman Fragrances | Premium Dubai & Arabian Scents" />
+    <meta name="twitter:description"
+        content="Premium imported Dubai and Arabian perfumes available for men and women." />
+    <meta name="twitter:image" content="https://your-domain.com/assets/preview.jpg" />
+
+    <!-- Style links -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet"><!-- Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><!-- Playfair -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- Great Vibes -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -17,7 +45,7 @@
                     <img src="images/icons/option.png" alt="Menu Icon" width="28">
                 </button>
                 <a href="index.html">
-                    <h1>PM <span>Fragrances</span></h1>
+                    <h1><span class="company-name">Grootman</span> Fragrances</h1>
                 </a>
             </div>
 
@@ -33,7 +61,7 @@
                 <!-- Mobile Dropdown Menu -->
                 <div class="mobile-menu">
                     <div class="company-logo-mobile">
-                        <h1>PM Fragrances</h1>
+                        <h1><span class="company-name">Grootman</span> Fragrances</h1>
                         <span class="close-menu-modal">&times;</span>
                     </div>
                     <ul class="mobile-nav-links"><!-- Update Mobile Menu Links -->
@@ -44,7 +72,7 @@
                             <a href="shop.html"><img src="images/icons/shop.png" alt="Shopping" width="24">Shop</a>
                         </li>
                         <li>
-                            <a href="#cart"><img src="images/icons/shopping-cart.png" alt="Shopping Cart"
+                            <a href="cart.html"><img src="images/icons/shopping-cart.png" alt="Shopping Cart"
                                     width="24">Cart</a>
                         </li>
                         <li>
@@ -55,28 +83,26 @@
                             <a href="#contact"><img src="images/icons/chat.png" alt="FAQ" width="24">FAQs</a>
                         </li>
                         <li>
-                            <a href="#about"><img src="images/icons/about.png" alt="About" width="24">About Us</a>
+                            <a href="about.html"><img src="images/icons/about.png" alt="About" width="24">About Us</a>
                         </li>
-                        <li>
-                            <a href="#signin"><img src="images/icons/log-in.png" alt="Sign In" width="24">Sign In</a>
-                        </li>
-                        <li>
-                            <a href="#signup"><img src="images/icons/sign-up.png" alt="Sign Up" width="24">Sign Up</a>
-                        </li>
+                        <div class="hidden"><!-- Hidden for future scaling -->
+                            <li>
+                                <a href="#signin"><img src="images/icons/log-in.png" alt="Sign In" width="24">Sign
+                                    In</a>
+                            </li>
+                            <li>
+                                <a href="#signup"><img src="images/icons/sign-up.png" alt="Sign Up" width="24">Sign
+                                    Up</a>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </nav>
 
             <!-- Icons -->
             <div class="header-icons">
-                <button class="icon-btn" aria-label="Search">
-                    <img src="images/icons/search.png" alt="Search" width="26">
-                </button>
                 <button class="icon-btn" aria-label="Shopping Cart" onclick="window.location.href='cart.html'">
                     <img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="26">
-                </button>
-                <button class="icon-btn profile" aria-label="User Account">
-                    <img src="images/icons/user.png" alt="User Account" width="26">
                 </button>
             </div>
         </div>
@@ -90,9 +116,10 @@
                 <!-- Slide 1: For Him -->
                 <article class="hero-slide" data-slide="for-him" aria-roledescription="slide" aria-label="For Him">
                     <div class="hero-content">
-                        <h2 class="hero-title">Bold Scents for Modern Men</h2>
+                        <h2 class="hero-title">Discover Bold Scents Crafted for Men</h2>
                         <p class="hero-subtitle">
-                            Explore Dubai-inspired and designer colognes that define confidence and class.
+                            Step into a world of premium colognes inspired by Dubai and top designers—fragrances that
+                            speak confidence, power, and timeless style
                         </p>
                         <div class="hero-actions">
                             <a href="shop.html" class="hero-btn">Shop Now</a>
@@ -106,9 +133,10 @@
                 <!-- Slide 2: For Her -->
                 <article class="hero-slide" data-slide="for-her" aria-roledescription="slide" aria-label="For Her">
                     <div class="hero-content">
-                        <h2 class="hero-title">Elegant. Feminine. Unforgettable.</h2>
+                        <h2 class="hero-title">Luxury Perfumes Designed for Women</h2>
                         <p class="hero-subtitle">
-                            Indulge in luxury perfumes that turn every moment into a statement.
+                            Indulge in elegant, feminine fragrances that transform ordinary moments into unforgettable
+                            experiences of sophistication and grace.
                         </p>
                         <div class="hero-actions">
                             <a href="shop.html" class="hero-btn">Shop Now</a>
@@ -122,9 +150,10 @@
                 <!-- Slide 3: Unisex -->
                 <article class="hero-slide" data-slide="unisex" aria-roledescription="slide" aria-label="Unisex">
                     <div class="hero-content">
-                        <h2 class="hero-title">Confidence Has No Gender</h2>
+                        <h2 class="hero-title">Fragrances Without Boundaries</h2>
                         <p class="hero-subtitle">
-                            Discover balanced fragrances loved by both men and women — built to suit every style.
+                            Explore balanced scents loved by everyone—crafted to complement any personality and elevate
+                            every occasion with effortless charm.
                         </p>
                         <div class="hero-actions">
                             <a href="shop.html" class="hero-btn">Shop Now</a>
@@ -139,9 +168,10 @@
                 <article class="hero-slide" data-slide="best-sellers" aria-roledescription="slide"
                     aria-label="Best Sellers">
                     <div class="hero-content">
-                        <h2 class="hero-title">Top Picks Our Customers Swear By</h2>
+                        <h2 class="hero-title">Our Most Loved and Trusted Picks</h2>
                         <p class="hero-subtitle">
-                            Shop our best-selling fragrances trusted, original, and loved by thousands.
+                            Shop the fragrances that customers swear by—authentic, long-lasting, and celebrated for
+                            their ability to leave a lasting impression.
                         </p>
                         <div class="hero-actions">
                             <a href="shop.html" class="hero-btn">Shop Now</a>
@@ -158,7 +188,7 @@
         <section class="featured-collections" id="shop">
             <div class="container collections-container reveal">
                 <h2>Featured Collections</h2>
-                <p>Explore our handpicked fragrances — carefully curated to match your style and personality.</p>
+                <p>Explore our handpicked fragrances carefully curated to match your style and personality.</p>
 
                 <div class="collections-grid">
                     <!-- Collection 1: For Him -->
@@ -166,10 +196,11 @@
                         <a href="shop.html">
                             <div class="collection-image">
                                 <img src="https://cdn.shopify.com/s/files/1/0530/6964/3969/files/armaf-club-de-nuit-intense-men-105ml-dubai-perfumes-258.webp"
-                                    alt="For Him Perfumes">
+                                    alt="Signature Scents for Men">
                                 <div class="image-overlay"></div>
                             </div>
-                            <h3>For Him</h3>
+                            <h3>Signature Scents for Men</h3>
+                            <p class="collection-subtitle">Bold, confident fragrances crafted for the modern gentleman.</p>
                             <span class="shop-now-btn">Shop Now</span>
                         </a>
                     </div>
@@ -182,7 +213,8 @@
                                     alt="For Her Perfumes">
                                 <div class="image-overlay"></div>
                             </div>
-                            <h3>For Her</h3>
+                            <h3>Luxury Picks for Women</h3>
+                            <p class="collection-subtitle">Elegant perfumes that turn every moment into a statement.</p>
                             <span class="shop-now-btn">Shop Now</span>
                         </a>
                     </div>
@@ -195,7 +227,11 @@
                                     alt="Unisex Perfumes">
                                 <div class="image-overlay"></div>
                             </div>
-                            <h3>Unisex</h3>
+
+                            <h3>Unisex Icons</h3>
+                            <p class="collection-subtitle">Versatile scents loved by everyone—perfect for any occasion.
+                            </p>
+
                             <span class="shop-now-btn">Shop Now</span>
                         </a>
                     </div>
@@ -208,7 +244,11 @@
                                     alt="Best Sellers Perfumes">
                                 <div class="image-overlay"></div>
                             </div>
-                            <h3>Best Sellers</h3>
+
+                            <h3>Best Sellers You’ll Love</h3>
+                            <p class="collection-subtitle">Our most trusted and top-rated fragrances, handpicked for
+                                you.</p>
+
                             <span class="shop-now-btn">Shop Now</span>
                         </a>
                     </div>
@@ -218,17 +258,19 @@
 
         <!-- About Section -->
         <section class="about-section" id="about">
-            <div class="about-container">
+            <div class="about-container reveal">
+                <div class="about-image reveal">
+                    <img src="images/icons/grootman logo.jpeg" alt="Luxury Perfume Collection">
+                </div>
                 <div class="about-content reveal">
                     <h2>Our Story</h2>
                     <p>
                         Discover a world of exquisite scents, handpicked for elegance, style, and timeless appeal.
-                        Every fragrance tells a story - at PM Fragrances, we help you find the one that speaks to yours.
+                        Every fragrance tells a story - at Grootman Fragrances, we help you find the one that speaks
+                        to
+                        yours.
                     </p>
-                    <a href="#about" class="readmore-link">Read More About Us</a>
-                </div>
-                <div class="about-image reveal">
-                    <img src="images/products/black-ramz.jpg" alt="Luxury Perfume Collection">
+                    <a href="about.html" class="readmore-link">Read More About Us</a>
                 </div>
             </div>
         </section>
@@ -241,7 +283,8 @@
                 <div class="testimonial-grid">
                     <!-- Testimonial 1 -->
                     <blockquote class="testimonial reveal">
-                        <p>"Every fragrance I've purchased from PM Fragrances has been authentic and luxurious. I get
+                        <p>"Every fragrance I've purchased from Grootman Fragrances has been authentic and luxurious. I
+                            get
                             compliments wherever I go!"</p>
                         <footer class="client-name">— Thabo M</footer>
                     </blockquote>
@@ -255,7 +298,7 @@
 
                     <!-- Testimonial 3 -->
                     <blockquote class="testimonial reveal">
-                        <p>"I finally found my signature scent thanks to PM Fragrances. Highly recommended!"</p>
+                        <p>"I finally found my signature scent thanks to Grootman Fragrances. Highly recommended!"</p>
                         <footer class="client-name">— Sipho D</footer>
                     </blockquote>
                 </div>
@@ -290,9 +333,9 @@
         <div class="container footer-container">
             <!-- Company Logo & Tagline -->
             <div class="company-logo">
-                <a href="#home" aria-label="PM Fragrances - Home">
-                    <h2>PM Fragrances</h2>
-                    <img src="images/icons/search.png" class="footer-logo" alt="PM Fragrances Logo">
+                <a href="#home" aria-label="Grootman Fragrances - Home">
+                    <h2><span class="company-name">Grootman</span> Fragrances</h2>
+                    <img src="images/icons/white-logo.png" class="footer-logo" alt="Grootman Fragrances Logo">
                 </a>
                 <p class="footer-tagline">Curated Luxury Affordable Fragrances from Around the World</p>
             </div>
@@ -304,10 +347,12 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="#cart">Cart</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#faqs">FAQs</a></li>
-                    <li><a href="#sign-in">Sign In</a></li>
-                    <li><a href="#sign-up">Sign Up</a></li>
+                    <div class="hidden"><!-- Hidden for future scaling -->
+                        <li><a href="#sign-in">Sign In</a></li>
+                        <li><a href="#sign-up">Sign Up</a></li>
+                    </div>
                     <li><a href="#terms">Terms & Conditions</a></li>
                 </ul>
             </nav>
@@ -315,9 +360,9 @@
             <!-- Contact Information -->
             <div class="contact" id="contact">
                 <h3>Contact Us</h3>
-                <p>Email: customercare@pmfragrances.com</p>
-                <p>Phone: +27 79 168 1131</p>
-                <p>WhatsApp: +27 79 168 1131</p>
+                <p>Email: customercare@grootmanfragrances.com</p>
+                <p>Phone: +27 81 712 0030</p>
+                <p>WhatsApp: +27 81 712 0030</p>
             </div>
 
             <!-- Social Media Icons -->
@@ -336,7 +381,7 @@
         </div>
         <!-- Credits / Legal -->
         <div class="developer-credits">
-            <p>&copy; 2025 PM Fragrances. All rights reserved. Powered by Peacemaker Dev</p>
+            <p>&copy; 2025 Grootman Fragrances. All rights reserved. Powered by Peacemaker Dev</p>
         </div>
     </footer>
     <script src="home.js"></script>
