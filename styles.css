@@ -11,6 +11,11 @@ body {
   line-height: 1.6;
 }
 
+/* Box for intentionally hidden items */ 
+.hidden {
+  display: none;
+}
+
 /*============= Header =============*/
 .site-header {
   position: fixed;
@@ -293,8 +298,6 @@ body {
 
 .hero-content {
   position: relative;
-  /*width: 100%;
-  padding: 0.5rem;*/
   max-width: 700px;
   z-index: 4;
 }
@@ -367,15 +370,12 @@ body {
     text-align: center;
     padding: 1rem;
   }
-
   .hero-title {
     font-size: 2rem;
   }
-
   .hero-subtitle {
     font-size: 1rem;
   }
-
   .hero-btn {
     width: 100%;
     text-align: center;
@@ -998,8 +998,8 @@ body {
   padding: 1.5rem 1.5rem 1rem 1.5rem;
   background: #fff;
   margin-top: 1.2rem;
+  border-radius: 12px;
   border-bottom: 1px solid #e5e7eb;
-  position: relative;
   z-index: 10;
 }
 
@@ -1122,6 +1122,9 @@ body {
   .filter-box {
     display: flex;
     justify-content: center;
+  }
+  .filter-section {
+    height: fit-content;
   }
 
   #filter-category {
@@ -1340,8 +1343,7 @@ body {
   margin-top: 1.5rem;
   width: 100%;
   position: relative;
-  z-index: 10;
-  /* ensures dropdown appears above modal background */
+  z-index: 10; /* ensures dropdown appears above modal background */
 }
 
 /* Quantity Control */
@@ -1366,11 +1368,9 @@ body {
   background: #fff;
   cursor: pointer;
   transition: border-color 0.2s ease;
-  appearance: auto;
-  /* ensures dropdown arrow is visible */
+  appearance: auto; /* ensures dropdown arrow is visible */
   position: relative;
-  z-index: 9999;
-  /* ensures dropdown appears above modal overlay */
+  z-index: 9999;/* ensures dropdown appears above modal overlay */
 }
 
 #quantity-value:hover {
@@ -1444,8 +1444,7 @@ body.modal-open {
 
 /* Modal content scrollable */
 #product-modal .modal-content {
-  max-height: 90vh;
-  /* Prevent modal from overflowing screen */
+  max-height: 90vh; /* Prevent modal from overflowing screen */
   overflow-y: auto;
 }
 
@@ -1461,7 +1460,7 @@ body.modal-open {
   transform: translateY(0);
 }
 
-/* ---------------- CART PAGE ---------------- */
+/*=================== Cart Page Styles ===================*/
 .cart-main {
   padding: 6rem 1rem 4rem;
   background-color: #fafafa;
@@ -1722,73 +1721,66 @@ body.modal-open {
   }
 }
 
-/* Box for intentionally hidden items */ 
-.hidden {
-  display: none;
-}
-
+/*=================== About Page Styles ===================*/
 .about-main {
   font-family: 'Poppins', sans-serif;
   color: #221F24;
-  line-height: 1.7;
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
-/*
 .about-hero {
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
-  color: #fff;
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 1rem;
+  width: 90%;
+  margin: auto;
   border-radius: 0 0 20px 20px;
 }
 
 .about-hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  margin-bottom: 1rem;
 }
 
 .about-hero p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
+  color: #444;
 }
 
 .about-main h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: #7D1119;
-  margin-bottom: 1rem;
+  font-size: 2.2rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .about-main p {
   font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 1.5rem;
+  color: #4a4a4a;
   text-align: center;
 }
 
-.container {
+.text-box {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  text-align: left;
+  margin-top: 1rem;
 }
 
 .columns .col {
-  background: #fff;
   padding: 2rem;
+  background: #ddd;
   border-radius: 15px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+  text-align: left;
 }
 
 .feature-grid {
@@ -1797,63 +1789,50 @@ body.modal-open {
   gap: 1rem;
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin-top: 1rem;
 }
 
 .feature-grid li {
-  background: #f9fafb;
+  background: #ddd;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   font-weight: 500;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
 }
 
-.cta-section {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: #f9fafb;
-  border-radius: 20px;
-}
-
-.cta-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.cta-section p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.cta-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
-  color: #fff;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.cta-btn:hover {
-  background: linear-gradient(135deg, #4a00e0, #8e2de2);
+.feature-grid li:hover {
   transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 768px) {
   .columns {
     grid-template-columns: 1fr;
+  }
+  .columns .col {
     text-align: center;
   }
-
   .about-hero h1 {
     font-size: 2.2rem;
   }
-
   .about-main h2 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
     font-size: 1.8rem;
   }
-}*/
+  .about-main h2 {
+    font-size: 1.6rem;
+  }
+  .about-main p {
+    font-size: 0.98rem;  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}

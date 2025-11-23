@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - Grootman Fragrances</title>
+    <title>Contact - Grootman Fragrances</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- Great Vibes -->
+
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
 
                 <!-- Mobile Dropdown Menu -->
@@ -75,50 +76,73 @@
 
             <!-- Icons -->
             <div class="header-icons">
-                <button class="icon-btn" aria-label="Shopping Cart" class="active">
+                <button class="icon-btn" aria-label="Shopping Cart" onclick="window.location.href='cart.html'">
                     <img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="26">
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="cart-main">
-        <div class="container cart-container">
-            <h2>Your Shopping Cart</h2>
+    <main class="contact-main">
+        <section class="contact-page">
+            <div class="contact-container">
 
-            <!-- Empty Cart Message -->
-            <div class="empty-cart" id="empty-cart" style="display: none;">
-                <img src="images/icons/empty-cart.png" alt="Empty Cart" width="100">
-                <p>Your cart is currently empty.</p>
-                <a href="shop.html" class="continue-btn">Continue Shopping</a>
-            </div>
+                <!-- Page Header -->
+                <header class="contact-header">
+                    <h1>Contact Us</h1>
+                    <p>Have questions about products or custom website templates? Send your message below.</p>
+                </header>
 
-            <!-- Cart Items Section -->
-            <div class="cart-content">
-                <div class="cart-items" id="cart-items">
-                    <!-- Cart items will be dynamically inserted here by cart.js -->
-                </div>
+                <!-- Contact Form -->
+                <form class="contact-form" enctype="multipart/form-data">
 
-                <!-- Cart Summary -->
-                <aside class="cart-summary">
-                    <h3>Cart Summary</h3>
-                    <div class="summary-details">
-                        <p class="summary-total">Total: R<span id="total-price">0.00</span></p>
+                    <!-- 1. Full Name -->
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                     </div>
 
-                    <!-- Promo Code (optional, can activate later) -->
-                    <div class="promo-section">
-                        <input type="text" id="promo-code" placeholder="Enter promo code">
-                        <button id="apply-promo">Apply</button>
+                    <!-- 2. Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     </div>
 
-                    <button class="checkout-btn">Proceed to Checkout</button>
-                    <a href="shop.html" class="continue-btn">Continue Shopping</a>
-                </aside>
+                    <!-- 3. Message + File Upload -->
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Type your message"
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="file">Attach File (Optional)</label>
+                        <input type="file" id="file" name="file">
+                    </div>
+
+                    <!-- 6. Preferred Contact Method -->
+                    <div class="form-group">
+                        <label>Preferred Contact Method *</label>
+                        <select name="method" required>
+                            <option value="">Select one</option>
+                            <option>Email</option>
+                            <option>WhatsApp</option>
+                        </select>
+                    </div>
+
+                    <!-- 8. Consent -->
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">I agree to be contacted regarding my inquiry.</label>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="contact-submit">Send Message</button>
+                </form>
+
             </div>
-        </div>
+        </section>
     </main>
-
     <!-- Footer -->
     <footer class="multi-page-footer">
         <div class="multi-page-footer-container">
@@ -127,7 +151,6 @@
         </div>
     </footer>
     <script src="home.js"></script><!-- Script for navigation -->
-    <script src="cart.js"></script><!-- Script for listing and storing products -->
 </body>
 
 </html>
