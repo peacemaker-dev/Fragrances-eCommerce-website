@@ -19,7 +19,7 @@
                 <button class="menu-toggle" aria-label="Toggle Menu">
                     <img src="images/icons/option.png" alt="Menu Icon" width="28">
                 </button>
-                <a href="index.html">
+                <a href="#">
                     <h1><span class="company-name">Grootman</span> Fragrances</h1>
                 </a>
             </div>
@@ -55,7 +55,7 @@
                                     width="24">Contact</a>
                         </li>
                         <li>
-                            <a href="#contact"><img src="images/icons/chat.png" alt="FAQ" width="24">FAQs</a>
+                            <a href="faq.html"><img src="images/icons/chat.png" alt="FAQ" width="24">FAQs</a>
                         </li>
                         <li>
                             <a href="about.html"><img src="images/icons/about.png" alt="About" width="24">About Us</a>
@@ -84,65 +84,94 @@
     </header>
 
     <main class="contact-main">
-        <section class="contact-page">
-            <div class="contact-container">
+        <section class="contact-container">
+            <!-- Page Header -->
+            <header class="contact-header">
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you! Whether you have questions about our fragrances or need a custom
+                    solution, we're here to help.</p>
+            </header>
 
-                <!-- Page Header -->
-                <header class="contact-header">
-                    <h1>Contact Us</h1>
-                    <p>Have questions about products or custom website templates? Send your message below.</p>
-                </header>
-
-                <!-- Contact Form -->
-                <form class="contact-form" enctype="multipart/form-data">
-
-                    <!-- 1. Full Name -->
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <!-- Contact Info -->
+            <section class="contact-info">
+                <div class="contact-details">
+                    <h2>Get in Touch</h2>
+                    <ul>
+                        <li><strong>Email:</strong><a
+                                href="mailto:info@grootmanfragrances.com"> info@grootmanfragrances.com</a></li>
+                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/27817120030">081 712 0030</a>
+                        </li>
+                        <li><strong>Business Hours:</strong> Mon-Sat, 9 AM - 6 PM</li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <p>Follow us for fragrance tips and exclusive offers:</p>
+                    <div class="links">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                            <img src="images/icons/facebook.png" alt="Facebook Icon" width="30">
+                        </a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener">
+                            <img src="images/icons/tik-tok.png" alt="TikTok Icon" width="30">
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                            <img src="images/icons/social.png" alt="Instagram Icon" width="30">
+                        </a>
                     </div>
+                </div>
+            </section>
 
-                    <!-- 2. Email -->
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
+            <!-- Contact Form -->
+            <form class="contact-form" enctype="multipart/form-data">
+                <!-- Full Name -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Full Name * </label>
+                    <input type="text" id="name" name="name" placeholder="e.g. John Doe" required>
+                    <label for="phone">Contact Number * </label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g 012 345 6789" required>
+                    <label for="email">Email Address * </label>
+                    <input type="email" id="email" name="email" placeholder="e.g. johndoe@gmail.com" required>
+                </fieldset>
 
-                    <!-- 3. Message + File Upload -->
-                    <div class="form-group">
-                        <label for="message">Your Message *</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Type your message"
-                            required></textarea>
-                    </div>
+                <fieldset>
+                    <legend>Inquiry Details</legend>
+                    <!-- Message -->
+                    <label for="message"> Your Message *</label>
+                    <textarea id="message" name="message" rows="5" cols="5" placeholder="Type your message here..." required>
 
-                    <div class="form-group">
-                        <label for="file">Attach File (Optional)</label>
-                        <input type="file" id="file" name="file">
-                    </div>
+                        </textarea>
+                    <!-- File Upload -->
+                    <label for="file">Attach File (Optional)</label>
+                    <input type="file" id="file" name="file">
 
-                    <!-- 6. Preferred Contact Method -->
-                    <div class="form-group">
-                        <label>Preferred Contact Method *</label>
-                        <select name="method" required>
-                            <option value="">Select one</option>
-                            <option>Email</option>
-                            <option>WhatsApp</option>
-                        </select>
-                    </div>
+                    <!-- Preferred Contact Method -->
+                    <label>Preferred Contact Method *</label>
+                    <select name="method" required>
+                        <option value="">Select one</option>
+                        <option>Email</option>
+                        <option>WhatsApp</option>
+                    </select>
+                </fieldset>
 
-                    <!-- 8. Consent -->
-                    <div class="form-group checkbox">
-                        <input type="checkbox" id="consent" required>
-                        <label for="consent">I agree to be contacted regarding my inquiry.</label>
-                    </div>
+                <!-- Consent -->
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent">I agree to be contacted regarding my inquiry.</label>
+                </div>
 
-                    <!-- Submit -->
-                    <button type="submit" class="contact-submit">Send Message</button>
-                </form>
+                <!-- Submit -->
+                <button type="submit" class="contact-submit">Send Message</button>
+            </form>
 
-            </div>
+            <!-- Quick Help -->
+            <section class="quick-help">
+                <p>Looking for quick answers? <a href="faq.html">Check our FAQ</a> or <a href="shop.html">Browse our
+                        shop</a>.</p>
+            </section>
+
         </section>
     </main>
+
     <!-- Footer -->
     <footer class="multi-page-footer">
         <div class="multi-page-footer-container">
