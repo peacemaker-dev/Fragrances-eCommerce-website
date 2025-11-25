@@ -79,53 +79,53 @@
     </div>
   </header>
 
-  <main class="shop-main">
-    <section class="filter-section container">
-      <div class="filter-controls">
-        <!-- Sort Icon (Left) -->
-        <div class="left">
-          <!--<div class="search-icon">
-            <input type="search" ><img src="images/icons/search.png" alt="Grid View Icon" width="20">
-          </div>-->
-          <div class="view-icon">
-            <img src="images/icons/view-grid.png" alt="Grid View Icon" width="20">
-          </div>
-          <div class="sort-box">
-            <img src="images/icons/sort.png" alt="Sort Icon" width="22">
-          </div>
-        </div>
+  <!-- Filter and Search Section -->
+  <section class="filter-section container">
+    <div class="filter-controls">
+      <!-- LEFT: Category Selector -->
+      <div class="category-left">
+        <select id="filter-category">
+          <option value="">Category</option>
+          <option value="all">All</option>
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+          <option value="unisex">Unisex</option>
+        </select>
+      </div>
 
-        <!-- Must open when the sort icon is clicked -->
-        <div class="sort-options">
-          <ul>
-            <li>Price: Low to High</li>
-            <li>Price: High to Low</li>
-          </ul>
+      <!-- CENTER: Search Bar -->
+      <div class="search-center">
+        <div class="search-wrapper">
+          <input type="search" id="search-input" placeholder="Search fragrance...">
+          <button class="search-btn">
+            <img src="images/icons/search.png" alt="Search" width="18">
+          </button>
         </div>
+      </div>
 
-        <!-- Category (Center, Across Screen) -->
-        <div class="category-scroll">
-          <select id="filter-category">
-            <option value="">SELECT A CATEGORY</option>
-            <option value="all">All</option>
-            <option value="men">Men</option>
-            <option value="women">Women</option>
-            <option value="unisex">Unisex</option>
+      <!-- RIGHT: Sort and Filter -->
+      <div class="right-controls">
+        <div class="sort-box">
+          <select id="sort-options">
+            <option value="">Price</option>
+            <option value="low-to-high">Low to High</option>
+            <option value="high-to-low">High to Low</option>
           </select>
         </div>
 
-        <!-- Filter (Right) -->
         <div class="filter-box">
           <select id="filter-season">
-            <option value="">Filter By</option>
+            <option value="">Filter</option>
             <option value="summer">Summer</option>
             <option value="winter">Winter</option>
             <option value="all-year">All Year</option>
           </select>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
+  <main class="shop-main">
     <!-- Product Grid for displaying products -->
     <section class="product-grid container" id="product-grid"></section>
 

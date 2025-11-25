@@ -106,6 +106,7 @@ if (product) {
 });
 
 // Handle Add to Cart from Modal
+/*
 document.querySelector(".modal-cart-btn").addEventListener("click", () => {
   const productName = document.getElementById("modal-name").textContent;
   const productPrice = parseFloat(
@@ -133,5 +134,4 @@ document.querySelector(".modal-cart-btn").addEventListener("click", () => {
   // Give feedback
   //alert(`${productName} added to cart!`);
   modal.classList.remove("active");
-});
-
+});*/
