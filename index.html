@@ -30,8 +30,10 @@
     <meta name="twitter:image" content="https://your-domain.com/assets/preview.jpg" />
 
     <!-- Style links -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet"><!-- Cinzel -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"><!-- Playfair -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Cinzel -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Playfair -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- Great Vibes -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -126,7 +128,8 @@
                         </div>
                     </div>
                     <div class="hero-media" aria-hidden="true">
-                        <img src="images/hero/boss.jpg" alt="Boss Perfume" role="presentation">
+                        <img src="images/hero/armaf-club-de-nuit-intense-edt-vs-pure-parfum-675901.webp"
+                            alt="Boss Perfume" role="presentation">
                     </div>
                 </article>
 
@@ -143,7 +146,8 @@
                         </div>
                     </div>
                     <div class="hero-media" aria-hidden="true">
-                        <img src="images/hero/stronger-with-you.jpg" alt="Stronger With You" role="presentation">
+                        <img src="images/hero/lattafa-yara-moi-edp-perfume-sample-spray-546987-_1_e39dd858-0a8c-4636-b229-b367ee7711df.webp"
+                            alt="Stronger With You" role="presentation">
                     </div>
                 </article>
 
@@ -160,7 +164,8 @@
                         </div>
                     </div>
                     <div class="hero-media" aria-hidden="true">
-                        <img src="images/hero/honor-and-glory.jpg" alt="Honor-and-glory Perfume" role="presentation">
+                        <img src="images/hero/02_Lattafa_Elixir_KV2_16x9_bc92e741-91a0-4845-a3d8-997d73c362e6.webp"
+                            alt="Honor-and-glory Perfume" role="presentation">
                     </div>
                 </article>
 
@@ -178,7 +183,7 @@
                         </div>
                     </div>
                     <div class="hero-media" aria-hidden="true">
-                        <img src="images/hero/sauvage-1.jpg" alt=" Sauvage Perfume" role="presentation">
+                        <img src="images/hero/675401e1ca1ef2001dfd58b5.jpg" alt=" Sauvage Perfume" role="presentation">
                     </div>
                 </article>
             </div>
@@ -200,7 +205,8 @@
                                 <div class="image-overlay"></div>
                             </div>
                             <h3>Signature Scents for Men</h3>
-                            <p class="collection-subtitle">Bold, confident fragrances crafted for the modern gentleman.</p>
+                            <p class="collection-subtitle">Bold, confident fragrances crafted for the modern gentleman.
+                            </p>
                             <span class="shop-now-btn">Shop Now</span>
                         </a>
                     </div>
@@ -310,23 +316,48 @@
     <section class="faq-section" id="faqs">
         <div class="container faq-container reveal">
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-item reveal">
-                <h3>Are the perfumes authentic?</h3>
-                <p>Yes, we guarantee that all our perfumes are 100% authentic and sourced directly from reputable
-                    suppliers.</p>
+
+            <!-- Accordion FAQ Items -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Are the perfumes authentic?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we guarantee that all our perfumes are 100% authentic and sourced directly from reputable
+                        suppliers.</p>
+                </div>
             </div>
-            <div class="faq-item reveal">
-                <h3>What is your return policy?</h3>
-                <p>We accept returns within 14 days of purchase. The product must be unused and in its original
-                    packaging.</p>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>What is your return policy?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>We accept returns within 14 days of purchase. The product must be unused and in its original
+                        packaging.</p>
+                </div>
             </div>
-            <div class="faq-item reveal">
-                <h3>Do you offer international shipping?</h3>
-                <p>Currently, we only ship within South Africa. We are working on expanding our shipping options in
-                    the future.</p>
+
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Do you offer international shipping?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Currently, we only ship within South Africa. We are working on expanding our shipping options in
+                        the future.</p>
+                </div>
+            </div>
+
+            <!-- View All FAQs Button -->
+            <div class="faq-more">
+                <a class="btn-view-all" href="faq.html">View All FAQs</a>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="home-footer" role="contentinfo">
@@ -400,4 +431,16 @@
 
         reveals.forEach(reveal => observer.observe(reveal));
     </script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !expanded);
+                const answer = button.nextElementSibling;
+                answer.style.display = expanded ? 'none' : 'block';
+            });
+        });
+    </script>
+
 </body>

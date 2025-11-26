@@ -1,137 +1,187 @@
-const grid = document.getElementById("product-grid");
-const modal = document.getElementById("product-modal");
-const modalImg = document.getElementById("modal-image");
-const modalName = document.getElementById("modal-name");
-const modalDesc = document.getElementById("modal-desc");
-const modalPrice = document.getElementById("modal-price");
-const closeModal = document.querySelector(".close-modal");
+// shop.js (UPDATED WITH SEASON FILTER)
 
-// Fetch and render products
+// product grid
+const grid = document.getElementById("product-grid");
+
+// UI controls
+const searchInput = document.getElementById("search-input");
+const categorySelect = document.getElementById("filter-category");
+const sortSelect = document.getElementById("sort-options");
+const seasonFilter = document.getElementById("filter-season");
+
+// internal state
+let masterProducts = [];
+let visibleProducts = [];
+
+// Utility: convert price safely
+function parsePrice(value) {
+  if (value === null || value === undefined) return 0;
+  if (typeof value === "number") return value;
+  const cleaned = String(value).replace(/[^\d.-]/g, "");
+  const num = parseFloat(cleaned);
+  return Number.isFinite(num) ? num : 0;
+}
+
+// Load and normalize products
 async function loadProducts() {
   try {
-    const res = await fetch("products.json");
+    const res = await fetch("products.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`Failed to fetch products.json: ${res.status}`);
+
     const products = await res.json();
-    renderProducts(products);
-    setupModal(products);
+
+    masterProducts = products.map(p => ({
+      id: p.id ?? "",
+      name: p.name ?? "Unnamed product",
+      maker: p.maker ?? "",
+      category: (p.category ?? "").toLowerCase(),
+      season: (p.season ?? "").toLowerCase(), // SEASON ADDED
+      price: parsePrice(p.price),
+      image1: p.image1 ?? "",
+      image2: p.image2 ?? "",
+      description: p.description ?? "",
+      topNotes: p.topNotes ?? "",
+      middleNotes: p.middleNotes ?? "",
+      baseNotes: p.baseNotes ?? ""
+    }));
+
+    visibleProducts = [...masterProducts];
+    renderProducts(visibleProducts);
   } catch (err) {
     console.error("Error loading products:", err);
+    grid.innerHTML = `<p class="load-error">Sorry, we could not load products at the moment.</p>`;
   }
 }
 
+// Render product cards
 function renderProducts(list) {
   grid.innerHTML = "";
+
+  if (!list.length) {
+    grid.innerHTML = `
+      <div class="no-results">
+        <p>No results found.</p>
+      </div>`;
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+
   list.forEach(p => {
-    const card = `
-      <article class="product-card" data-category="${p.category}" data-id="${p.id}">
-        <img src="${p.image1}" alt="${p.name}" class="product-image" loading="lazy">
-        <div class="product-info">
-          <h3 class="product-name">${p.name}</h3>
-          <span class="product-maker">By ${p.maker}</span>
-          <p class="product-price">R${p.price.toLocaleString()}</p>
-        </div>
-      </article>
-    `;
-    grid.insertAdjacentHTML("beforeend", card);
+    const article = document.createElement("article");
+    article.className = "product-card";
+
+    article.setAttribute("data-id", p.id);
+    article.setAttribute("data-name", p.name);
+    article.setAttribute("data-category", p.category);
+    article.setAttribute("data-season", p.season); // SEASON ADDED TO DOM
+    article.setAttribute("data-price", p.price);
+    article.setAttribute("data-maker", p.maker);
+    article.setAttribute("data-image1", p.image1);
+    article.setAttribute("data-image2", p.image2);
+    article.setAttribute("data-desc", p.description);
+    article.setAttribute("data-top", p.topNotes);
+    article.setAttribute("data-middle", p.middleNotes);
+    article.setAttribute("data-base", p.baseNotes);
+
+    const img = document.createElement("img");
+    img.className = "product-image";
+    img.loading = "lazy";
+    img.alt = p.name;
+    img.src = p.image1 || "images/placeholder.png";
+
+    const info = document.createElement("div");
+    info.className = "product-info";
+
+    const h3 = document.createElement("h3");
+    h3.textContent = p.name;
+
+    const maker = document.createElement("span");
+    maker.className = "product-maker";
+    maker.textContent = `By ${p.maker}`;
+
+    const price = document.createElement("p");
+    price.className = "product-price";
+    price.textContent = `R${p.price.toLocaleString()}`;
+
+    info.appendChild(h3);
+    info.appendChild(maker);
+    info.appendChild(price);
+
+    article.appendChild(img);
+    article.appendChild(info);
+
+    article.style.cursor = "pointer";
+
+    fragment.appendChild(article);
   });
+
+  grid.appendChild(fragment);
 }
 
-function setupModal(products) {
-  grid.addEventListener("click", e => {
-    const card = e.target.closest(".product-card");
-    if (!card) return;
-    const productId = card.dataset.id;
-    const product = products.find(p => p.id === productId);
-    if (product) {
-      modalImg.src = product.image;
-      modalName.textContent = product.name;
-      modalDesc.textContent = product.description;
-      modalPrice.textContent = `R${product.price.toLocaleString()}`;
-      modal.classList.add("active");
+// Filters + Sorting
+function applyFiltersAndSort() {
+  const q = (searchInput?.value ?? "").trim().toLowerCase();
+  const category = (categorySelect?.value ?? "").toLowerCase();
+  const sort = (sortSelect?.value ?? "");
+  const season = (seasonFilter?.value ?? "").toLowerCase(); // ACTIVE
+
+  visibleProducts = masterProducts.filter(p => {
+    const matchesSearch =
+      q === "" ||
+      p.name.toLowerCase().includes(q) ||
+      p.maker.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q);
+
+    const matchesCategory =
+      category === "" || category === "all" || p.category === category;
+
+    const matchesSeason =
+      season === "" || season === "all" || p.season === season;
+
+    return matchesSearch && matchesCategory && matchesSeason;
+  });
+
+  // sort
+  if (sort === "low-to-high") {
+    visibleProducts.sort((a, b) => a.price - b.price);
+  } else if (sort === "high-to-low") {
+    visibleProducts.sort((a, b) => b.price - a.price);
+  }
+
+  renderProducts(visibleProducts);
+}
+
+// debounce helper
+function debounce(fn, wait = 200) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
+// listeners
+function setupListeners() {
+  searchInput?.addEventListener("input", debounce(applyFiltersAndSort, 180));
+  categorySelect?.addEventListener("change", applyFiltersAndSort);
+  sortSelect?.addEventListener("change", applyFiltersAndSort);
+  seasonFilter?.addEventListener("change", applyFiltersAndSort);
+
+  searchInput?.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      applyFiltersAndSort();
     }
   });
-
-  closeModal.addEventListener("click", () => modal.classList.remove("active"));
-  modal.addEventListener("click", e => {
-    if (e.target === modal) modal.classList.remove("active");
-  });
 }
 
-loadProducts();
-// ==================== ADD TO CART CONNECTION ====================
-
-// Load existing cart or create an empty one
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-// Save to localStorage
-function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
+function getProductById(id) {
+  return masterProducts.find(p => String(p.id) === String(id));
 }
 
-// Add product to cart
-function addToCart(product) {
-  const existing = cart.find(item => item.id === product.id);
-  if (existing) {
-    existing.quantity += 1;
-  } else {
-    cart.push({ ...product, quantity: 1 });
-  }
-  saveCart();
-  showCartNotification();
-}
+window.getProductById = getProductById;
 
-// Show quick toast when added
-function showCartNotification() {
-  const toast = document.createElement("div");
-  toast.className = "cart-toast";
-  toast.textContent = "Added to cart!";
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 1500);
-}
-
-// Listen for Add to Cart button clicks (inside product grid)
-grid.addEventListener("click", e => {
-if (product) {
-  document.getElementById("modal-image1").src = product.image1;
-  document.getElementById("modal-image2").src = product.image2;
-  document.getElementById("modal-name").textContent = product.name;
-  document.getElementById("modal-desc").textContent = product.description;
-  document.getElementById("modal-top").textContent = product.topNotes;
-  document.getElementById("modal-middle").textContent = product.middleNotes;
-  document.getElementById("modal-base").textContent = product.baseNotes;
-  document.getElementById("modal-maker").textContent = product.maker;
-  document.getElementById("modal-price").textContent = `R${product.price.toLocaleString()}`;
-  modal.classList.add("active");
-}
-
+document.addEventListener("DOMContentLoaded", () => {
+  loadProducts().then(() => setupListeners());
 });
-
-// Handle Add to Cart from Modal
-/*
-document.querySelector(".modal-cart-btn").addEventListener("click", () => {
-  const productName = document.getElementById("modal-name").textContent;
-  const productPrice = parseFloat(
-    document.getElementById("modal-price").textContent.replace(/[^\d.]/g, "")
-  );
-  const productImage = document.getElementById("modal-image1").src;
-  const quantity = parseInt(document.getElementById("quantity-value").value);
-
-  const cartItem = { name: productName, price: productPrice, image: productImage, quantity };
-
-  // Load existing cart or create new one
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // Check if product already exists in cart
-  const existing = cart.find(item => item.name === cartItem.name);
-  if (existing) {
-    existing.quantity += quantity;
-  } else {
-    cart.push(cartItem);
-  }
-
-  // Save updated cart
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  // Give feedback
-  //alert(`${productName} added to cart!`);
-  modal.classList.remove("active");
-});*/

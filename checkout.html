@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Grootman Fragrances</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- Great Vibes -->
+
+</head>
+
+<body>
+    <header class="site-header static-header">
+        <div class="container header-container">
+            <div class="logo">
+                <!-- Mobile Menu Toggle -->
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <img src="images/icons/option.png" alt="Menu Icon" width="28">
+                </button>
+                <a href="#">
+                    <h1><span class="company-name">Grootman</span> Fragrances</h1>
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <!-- Mobile Dropdown Menu -->
+                <div class="mobile-menu">
+                    <div class="company-logo-mobile">
+                        <h1><span class="company-name">Grootman</span> Fragrances</h1>
+                        <span class="close-menu-modal">&times;</span>
+                    </div>
+                    <ul class="mobile-nav-links">
+                        <li>
+                            <a href="index.html"><img src="images/icons/home.png" alt="Home" width="24">Home</a>
+                        </li>
+                        <li>
+                            <a href="shop.html"><img src="images/icons/shop.png" alt="Shopping" width="24">Shop</a>
+                        </li>
+                        <li>
+                            <a href="cart.html"><img src="images/icons/shopping-cart.png" alt="Shopping Cart"
+                                    width="24">Cart</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><img src="images/icons/contact.png" alt="Customer Service"
+                                    width="24">Contact</a>
+                        </li>
+                        <li>
+                            <a href="faq.html"><img src="images/icons/chat.png" alt="FAQ" width="24">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="about.html"><img src="images/icons/about.png" alt="About" width="24">About Us</a>
+                        </li>
+                        <div class="hidden"><!-- Hidden for future scaling -->
+                            <li>
+                                <a href="#signin"><img src="images/icons/log-in.png" alt="Sign In" width="24">Sign
+                                    In</a>
+                            </li>
+                            <li>
+                                <a href="#signup"><img src="images/icons/sign-up.png" alt="Sign Up" width="24">Sign
+                                    Up</a>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Icons -->
+            <div class="header-icons">
+                <button class="icon-btn" aria-label="Shopping Cart" class="active">
+                    <img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="26">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-main">
+        <div class="container checkout-container">
+            <h2>Checkout</h2>
+
+            <!-- Progress / Steps header -->
+            <div class="checkout-steps" aria-hidden="false">
+                <div class="step step-1 active" data-step="1">1. Details</div>
+                <div class="step step-2" data-step="2">2. Delivery</div>
+                <div class="step step-3" data-step="3">3. Payment </div>
+            </div>
+
+            <!-- STEP 1: Customer Details -->
+            <section class="checkout-step" id="step-1" data-step="1">
+                <form id="checkout-form" autocomplete="on" novalidate>
+                    <fieldset>
+                        <legend>Customer Information</legend>
+
+                        <label for="full-name">Full name<span aria-hidden="true">*</span></label>
+                        <input id="full-name" name="fullName" type="text" required placeholder="John Doe">
+
+                        <label for="phone">Phone number<span aria-hidden="true">*</span></label>
+                        <input id="phone" name="phone" type="tel" required placeholder="082 123 4567">
+
+                        <label for="email">Email (optional)</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Delivery Address</legend>
+
+                        <label for="province">Province<span aria-hidden="true">*</span></label>
+                        <select id="province" name="province" required>
+                            <option value="">Select province</option>
+                            <option value="gauteng">Gauteng</option>
+                            <option value="western-cape">Western Cape</option>
+                            <option value="kwazulu-natal">KwaZulu-Natal</option>
+                            <option value="eastern-cape">Eastern Cape</option>
+                            <option value="free-state">Free State</option>
+                            <option value="north-west">North West</option>
+                            <option value="limpopo">Limpopo</option>
+                            <option value="mpumalanga">Mpumalanga</option>
+                            <option value="northern-cape">Northern Cape</option>
+                        </select>
+
+                        <label for="city">City / Town<span aria-hidden="true">*</span></label>
+                        <input id="city" name="city" type="text" required placeholder="e.g., Johannesburg">
+
+                        <label for="suburb">Suburb / Area</label>
+                        <input id="suburb" name="suburb" type="text" placeholder="e.g., Sandton">
+
+                        <label for="street">Street address<span aria-hidden="true">*</span></label>
+                        <input id="street" name="street" type="text" required placeholder="123 Example Street">
+
+                        <label for="address-notes">Delivery notes (gate code / instructions)</label>
+                        <textarea id="address-notes" name="notes" rows="2"
+                            placeholder="Leave at guard / gate code"></textarea>
+                    </fieldset>
+
+                    <p class="checkout-note">
+                        <strong>Note:</strong> Delivery is nationwide and normally takes 1–3 working days. Same-day
+                        delivery available in selected areas only.
+                    </p>
+
+                    <div class="checkout-actions">
+                        <button type="button" class="btn btn-secondary" id="btn-step1-back" disabled>Back</button>
+                        <button type="button" class="btn btn-primary" id="btn-step1-next">Continue to Delivery</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- STEP 2: Delivery Method -->
+            <section class="checkout-step" id="step-2" data-step="2" hidden>
+                <h3>Delivery Method</h3>
+
+                <fieldset>
+                    <legend>Choose delivery</legend>
+
+                    <label class="radio">
+                        <input type="radio" name="deliveryMethod" value="courier" id="delivery-courier" checked>
+                        <strong>Courier Guy (door-to-door)</strong>
+                        <div class="muted">ETA 1–3 working days. Nationwide.</div>
+                    </label>
+
+                    <label class="radio">
+                        <input type="radio" name="deliveryMethod" value="paxi" id="delivery-paxi">
+                        <strong>PAXI (store pickup)</strong>
+                        <div class="muted">Pickup at PEP / PAXI point. ETA 3–5 working days.</div>
+                    </label>
+
+                    <label class="radio">
+                        <input type="radio" name="deliveryMethod" value="meetup" id="delivery-meetup">
+                        <strong>Meet-Up (COD allowed)</strong>
+                        <div class="muted">Available only in selected areas.</div>
+                    </label>
+                </fieldset>
+
+                <!-- PAXI Extra Input -->
+                <div id="paxi-details" style="display:none;">
+                    <label for="paxi-branch">PAXI branch code</label>
+                    <input id="paxi-branch" name="paxiBranch" type="text" placeholder="Enter branch code">
+                </div>
+
+                <!-- Meetup Locations -->
+                <div id="meetup-locations" style="display:none;">
+                    <label for="meetup-spot">Choose meet-up point</label>
+                    <select id="meetup-spot" name="meetupSpot">
+                        <option value="">Select location</option>
+
+                        <!-- Active options -->
+                        <option value="pretoria-cbd">Pretoria CBD</option>
+                        <option value="soshanguve-crossing">Soshanguve Crossing</option>
+
+                        <!-- Leave space so you can add new locations later -->
+                        <!-- <option value="_____">Add more later</option> -->
+                    </select>
+
+                    <p class="checkout-note small">
+                        Meet-ups are not available during January and December.
+                    </p>
+                </div>
+
+                <p class="checkout-note">
+                    Delivery fee and COD eligibility will be confirmed after placing the order.
+                </p>
+
+                <div class="checkout-actions">
+                    <button type="button" class="btn btn-secondary" id="btn-step2-back">Back</button>
+                    <button type="button" class="btn btn-primary" id="btn-step2-next">Continue to Payment</button>
+                </div>
+            </section>
+
+
+            <!-- STEP 3: Payment & Review -->
+            <section class="checkout-step" id="step-3" data-step="3" hidden>
+                <h3>Payment & Review</h3>
+
+                <fieldset>
+                    <legend>Payment Method</legend>
+
+                    <label class="radio">
+                        <input type="radio" name="paymentMethod" value="eft" id="pay-eft" checked>
+                        <strong>Bank Transfer (EFT)</strong>
+                        <div class="muted">Use your Order ID as payment reference.</div>
+                    </label>
+
+                    <label class="radio" id="cod-option" style="display:none;">
+                        <input type="radio" name="paymentMethod" value="cod" id="pay-cod">
+                        <strong>Cash on Delivery (COD)</strong>
+                        <div class="muted">Only available for meet-ups in supported areas.</div>
+                    </label>
+                </fieldset>
+
+
+                <!-- Bank details (placeholder: fill server-side or via admin config later) -->
+                <div id="bank-details" class="bank-details">
+                    <h4>Bank details</h4>
+                    <p><strong>Bank:</strong> <span id="bank-name">[Bank Name]</span></p>
+                    <p><strong>Account:</strong> <span id="bank-account">[Account Number]</span></p>
+                    <p><strong>Account name:</strong> <span id="bank-holder">[Account Holder]</span></p>
+                    <p><strong>Branch code:</strong> <span id="bank-branch">[Branch Code]</span></p>
+                    <p class="muted">Use your Order ID as payment reference.</p>
+                </div>
+
+                <!-- Order Summary (items will be injected by JS from cart) -->
+                <aside class="order-summary" id="order-summary">
+                    <div class="summary-header">
+                        <h4>Order Summary</h4>
+                        <p>Order ID: <strong id="order-id">—</strong></p>
+                    </div>
+
+                    <div id="summary-items" class="summary-items">
+                        <!-- JS will populate item rows: image / name / qty / price / subtotal -->
+                    </div>
+
+                    <div class="summary-totals">
+                        <p>Subtotal: <strong id="summary-subtotal">R0.00</strong></p>
+                        <p>Delivery fee: <strong id="summary-delivery">Pending</strong></p>
+                        <p class="summary-total">Total: <strong id="summary-total">Pending</strong></p>
+                    </div>
+                </aside>
+
+                <div class="checkout-actions">
+                    <button type="button" class="btn btn-secondary" id="btn-step3-back">Back</button>
+                    <button type="button" class="btn btn-primary" id="btn-place-order">Place Order</button>
+                </div>
+
+                <p class="checkout-note small">
+                    By placing an order you agree to our terms. We will contact you via WhatsApp to confirm final
+                    delivery fee and COD availability. EFT through the website is not available yet.
+                </p>
+            </section>
+
+            <!-- Hidden template / placeholders for messages -->
+            <div id="checkout-messages" aria-live="polite" style="min-height: 1.5rem;"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="multi-page-footer">
+        <div class="multi-page-footer-container">
+            <p>&copy; 2025 <span class="brand">Grootman Fragrances</span>. All rights reserved.</p>
+            <p class="powered">Powered by <strong>Peacemaker Dev</strong></p>
+        </div>
+    </footer>
+    <script src="home.js"></script><!-- Script for navigation -->
+    <script src="checkout.js"></script><!-- Script for checkout process -->
+</body>
+
+</html>
