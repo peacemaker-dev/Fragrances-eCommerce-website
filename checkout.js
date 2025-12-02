@@ -6,7 +6,7 @@
 const PRODUCTS_JSON_LOCAL_PATH = "/mnt/data/products.json"; // developer note: transform to a URL in your environment if needed
 
 // WhatsApp recipient (international format without spaces or +)
-const WHATSAPP_NUMBER = "27817120030"; // +27 81 712 0030 -> 27817120030
+const WHATSAPP_NUMBER = "27791681131"; // +27 81 712 0030 -> 27817120030
 
 // DOM elements (step sections)
 const stepElems = {
@@ -343,6 +343,47 @@ function buildWhatsAppMessage(data) {
 }
 
 // handle place order flow
+// send order details to email using Web3Forms
+function sendOrderEmail(orderData) {
+  const emailMessage = document.getElementById("email-order-message");
+  const emailForm = document.getElementById("email-order-form");
+
+  let text = `ORDER ID: ${orderData.orderId}\n\n`;
+
+  text += "Customer Details:\n";
+  text += `Name: ${orderData.customer.name}\n`;
+  text += `Phone: ${orderData.customer.phone}\n`;
+  if (orderData.customer.email) text += `Email: ${orderData.customer.email}\n`;
+  text += `Address: ${orderData.customer.street}, ${orderData.customer.suburb}, ${orderData.customer.city}, ${orderData.customer.province}\n`;
+  if (orderData.customer.notes) text += `Notes: ${orderData.customer.notes}\n`;
+  text += "\n";
+
+  text += "Delivery:\n";
+  text += `${orderData.delivery.method}\n`;
+  if (orderData.delivery.method === "PAXI") {
+    text += `PAXI Branch: ${orderData.delivery.paxiBranch}\n`;
+  }
+  if (orderData.delivery.method === "Meet-Up") {
+    text += `Meet-Up Spot: ${orderData.delivery.meetupSpot}\n`;
+  }
+  text += "\n";
+
+  text += "Payment:\n";
+  text += `${orderData.payment.method}\n\n`;
+
+  text += "Items:\n";
+  orderData.items.forEach((i, idx) => {
+    text += `${idx + 1}. ${i.name} (x${i.quantity}) - R${i.price}\n`;
+  });
+
+  text += `\nSubtotal: R${orderData.subtotal}\n`;
+  text += "Delivery Fee: Pending\nTotal: Pending\n";
+
+  emailMessage.value = text;
+
+  emailForm.submit();
+}
+
 function handlePlaceOrder() {
   // final validation: ensure cart not empty
   loadCartFromStorage();
@@ -407,6 +448,9 @@ function handlePlaceOrder() {
     items: cart.map(i => ({ id: i.id, name: i.name, price: i.price, quantity: i.quantity })),
     subtotal
   };
+
+  // send order email
+  sendOrderEmail(data);
 
   // build WhatsApp message and open
   const message = buildWhatsAppMessage(data);

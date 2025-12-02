@@ -30,7 +30,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
 
                 <!-- Mobile Dropdown Menu -->
@@ -277,6 +277,18 @@
 
             <!-- Hidden template / placeholders for messages -->
             <div id="checkout-messages" aria-live="polite" style="min-height: 1.5rem;"></div>
+
+            <!-- Hidden form for email order submission via Web3Forms -->
+            <form id="email-order-form" method="POST" action="https://api.web3forms.com/submit" hidden>
+                <input type="hidden" name="access_key" value="5eaca25e-9df1-46dd-abf6-5e2e19b89b80">
+                <input type="hidden" name="from_name" value="Grootman Fragrances Website">
+                <input type="hidden" name="subject" value="New Order Received">
+                <input type="hidden" name="email" value="orders@grootmanfragrances.co.za">
+
+                <!-- this will contain the JSON order -->
+                <textarea name="message" id="email-order-message" hidden></textarea>
+            </form>
+
         </div>
     </main>
 

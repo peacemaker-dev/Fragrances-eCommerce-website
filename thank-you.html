@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - Grootman Fragrances</title>
+    <title>Confirmation - Grootman Fragrances</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"><!-- Great Vibes -->
+
 </head>
 
 <body>
@@ -28,7 +29,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
 
@@ -75,48 +76,69 @@
 
             <!-- Icons -->
             <div class="header-icons">
-                <button class="icon-btn" aria-label="Shopping Cart" class="active">
+                <button class="icon-btn" aria-label="Shopping Cart" onclick="window.location.href='cart.html'">
                     <img src="images/icons/shopping-cart.png" alt="Shopping Cart" width="26">
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="cart-main">
-        <div class="container cart-container">
-            <h2>Your Shopping Cart</h2>
+    <main class="thank-you-main">
 
-            <!-- Empty Cart Message -->
-            <div class="empty-cart" id="empty-cart" style="display: none;">
-                <img src="images/icons/empty-cart.png" alt="Empty Cart" width="100">
-                <p>Your cart is currently empty.</p>
-                <a href="shop.html" class="continue-btn">Continue Shopping</a>
-            </div>
+        <section class="thank-you-container">
+            <div class="thank-you-card">
 
-            <!-- Cart Items Section -->
-            <div class="cart-content">
-                <div class="cart-items" id="cart-items">
-                    <!-- Cart items will be dynamically inserted here by cart.js -->
+                <!-- Success Icon -->
+                <div class="thank-you-icon">
+                    <i class="fa-solid fa-circle-check"></i>
                 </div>
 
-                <!-- Cart Summary -->
-                <aside class="cart-summary">
-                    <h3>Cart Summary</h3>
-                    <div class="summary-details">
-                        <p class="summary-total">Total: R<span id="total-price">0.00</span></p>
-                    </div>
+                <!-- Main Message -->
+                <h2>Thank You for Your Order</h2>
 
-                    <!-- Promo Code (optional, can activate later) -->
-                    <div class="promo-section">
-                        <input type="text" id="promo-code" placeholder="Enter promo code">
-                        <button id="apply-promo">Apply</button>
-                    </div>
+                <p class="thank-you-text">
+                    Your order has been successfully received. We will contact you shortly via WhatsApp to confirm
+                    delivery fees, payment method and availability.
+                </p>
 
-                    <button class="checkout-btn" onclick="window.location.href='checkout.html'" >Proceed to Checkout</button>
-                    <a href="shop.html" class="continue-btn">Continue Shopping</a>
-                </aside>
+                <!-- Order ID Section -->
+                <div class="order-id-box">
+                    <p>Your Order ID</p>
+                    <h3 id="order-id">Loading...</h3>
+                </div>
+
+                <!-- What Happens Next -->
+                <div class="next-steps">
+                    <h4>What Happens Next?</h4>
+                    <ul>
+                        <li>We verify your items and stock availability.</li>
+                        <li>We contact you via WhatsApp within a few minutes.</li>
+                        <li>Delivery is arranged and confirmed.</li>
+                    </ul>
+                </div>
+
+                <!-- Support Options -->
+                <div class="support-buttons">
+                    <a href="https://wa.me/27817120030" target="_blank" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Support
+                    </a>
+                    <a href="mailto:info@grootmanfragrances.co.za" class="btn-email">
+                        <i class="fa-solid fa-envelope"></i> Email Support
+                    </a>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="cta-buttons">
+                    <a href="shop.html" class="btn-primary">Continue Shopping</a>
+                    <a href="index.html" class="btn-secondary">Return Home</a>
+                </div>
+
+                <!-- Optional Redirect Message -->
+                <p class="redirect-note">You will be redirected to the home page in 10 seconds...</p>
+
             </div>
-        </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -127,6 +149,38 @@
         </div>
     </footer>
     <script src="home.js"></script><!-- Script for navigation -->
-    <script src="cart.js"></script><!-- Script for listing and storing products -->
+    <script>
+        // Extract order ID from URL query (?order=XXXX)
+        function getOrderIdFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get("order") || "Unknown";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Set Order ID on the page
+            const orderIdEl = document.getElementById("order-id");
+            if (orderIdEl) {
+                orderIdEl.textContent = getOrderIdFromURL();
+            }
+
+            // Countdown redirect
+            let seconds = 10;
+            const redirectNote = document.querySelector(".redirect-note");
+
+            const countdown = setInterval(() => {
+                seconds--;
+
+                if (redirectNote) {
+                    redirectNote.textContent = `You will be redirected to the home page in ${seconds} seconds...`;
+                }
+
+                if (seconds <= 0) {
+                    clearInterval(countdown);
+                    window.location.href = "index.html";
+                }
+            }, 1000);
+        });
+    </script>
 </body>
+
 </html>

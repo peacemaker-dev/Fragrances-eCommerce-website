@@ -2468,3 +2468,207 @@ details.faq-item p {
     font-size: 0.9rem;
   }
 }
+
+
+/*=================== Thank You Page Styles ===================*/
+
+/* Main Container */
+.thank-you-main {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f4f4f6, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Card */
+.thank-you-card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Success Icon */
+.thank-you-icon {
+    font-size: 4rem;
+    color: #28a745; /* Green for success */
+    margin-bottom: 1rem;
+}
+
+/* Heading */
+.thank-you-card h2 {
+    font-size: 2rem;
+    color: #435565;
+    margin-bottom: 1rem;
+}
+
+/* Text */
+.thank-you-text {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Order ID Box */
+.order-id-box {
+    background: #f4f6f8;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.order-id-box p {
+    font-size: 0.95rem;
+    color: #738A9A;
+    margin-bottom: 0.3rem;
+}
+
+.order-id-box h3 {
+    font-size: 1.5rem;
+    color: #C43E46;
+    font-weight: bold;
+}
+
+/* Next Steps */
+.next-steps h4 {
+    font-size: 1.2rem;
+    color: #435565;
+    margin-bottom: 0.8rem;
+}
+
+.next-steps ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.next-steps li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.next-steps li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-size: 1rem;
+}
+
+/* Support Buttons */
+.support-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.btn-whatsapp, .btn-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+}
+
+.btn-whatsapp:hover {
+    background: #1ebe57;
+}
+
+.btn-email {
+    background: #435565;
+}
+
+.btn-email:hover {
+    background: #2e3e4d;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn-primary {
+    background: #C43E46;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #7D1119;
+}
+
+.btn-secondary {
+    background: #738A9A;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #435565;
+}
+
+/* Redirect Note */
+.redirect-note {
+    font-size: 0.9rem;
+    color: #738A9A;
+    margin-top: 1rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .thank-you-card {
+        padding: 2rem 1rem;
+    }
+
+    .thank-you-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .thank-you-text {
+        font-size: 1rem;
+    }
+
+    .order-id-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .support-buttons, .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
