@@ -439,6 +439,7 @@ html {
   position: relative;
   overflow: hidden;
   height: 250px;
+  border-radius: 0.5rem;
 }
 
 .collection-image img {
