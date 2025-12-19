@@ -6,7 +6,7 @@
 const PRODUCTS_JSON_LOCAL_PATH = "/mnt/data/products.json"; // developer note: transform to a URL in your environment if needed
 
 // WhatsApp recipient (international format without spaces or +)
-const WHATSAPP_NUMBER = "27791681131"; // +27 81 712 0030 -> 27817120030
+const WHATSAPP_NUMBER = "27817120030"; // +27 81 712 0030 -> 27817120030
 
 // DOM elements (step sections)
 const stepElems = {
