@@ -41,6 +41,7 @@ async function loadProducts() {
       image2: p.image2 ?? "",
       description: p.description ?? "",
       topNotes: p.topNotes ?? "",
+      size: p.size ?? "", // SIZE ADDED
       middleNotes: p.middleNotes ?? "",
       baseNotes: p.baseNotes ?? ""
     }));
@@ -83,6 +84,7 @@ function renderProducts(list) {
     article.setAttribute("data-top", p.topNotes);
     article.setAttribute("data-middle", p.middleNotes);
     article.setAttribute("data-base", p.baseNotes);
+    article.setAttribute("data-size", p.size); // SIZE ADDED TO DOM
 
     const img = document.createElement("img");
     img.className = "product-image";

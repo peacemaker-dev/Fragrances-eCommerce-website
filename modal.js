@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTop = document.getElementById("modal-top");
   const modalMiddle = document.getElementById("modal-middle");
   const modalBase = document.getElementById("modal-base");
+  const modalSize = document.getElementById("modal-size");
 
   const closeModal = document.querySelector(".close-modal");
   const qtySelect = document.getElementById("quantity-value");
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalTop.textContent = product.topNotes || "";
     modalMiddle.textContent = product.middleNotes || "";
     modalBase.textContent = product.baseNotes || "";
+    modalSize.textContent = product.size || "";
 
     qtySelect.value = "1";
 
