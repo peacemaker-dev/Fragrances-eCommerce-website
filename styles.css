@@ -1190,8 +1190,6 @@ html {
 .product-grid {
   display: flex;
   flex-wrap: wrap;
-  /*display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
   gap: 0.5rem;
   padding: 1.5rem 1rem;
   width: 100%;
@@ -1240,9 +1238,19 @@ html {
   flex-direction: column;
   align-items: center;
 }
-
+.product-info h3 {
+  width: 100%;               /* VERY IMPORTANT */
+  max-width: 100%;           /* prevent overflow */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
 .product-name {
   font-size: 1rem;
+  white-space: nowrap;      /* Prevent wrapping */
+    overflow: hidden;         /* Hide overflow text */
+    text-overflow: ellipsis;
   font-weight: 700;
   color: #222;
   margin: 0;
